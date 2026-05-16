@@ -1105,11 +1105,16 @@
       <!-- PROJECTS -->
       <section>
         <div class="section-label">projects</div>
-        <div class="ctf-row">
+        <div class="ctf-row project-item" onclick="openProjectModal('reconis')">
           <div>
-            <div class="ctf-name">Reconis</div>
+            <div
+              class="ctf-name"
+              style="display: flex; align-items: center; gap: 0.5rem"
+            >
+              Reconis <span class="detail-btn">Details ↗</span>
+            </div>
             <div class="ctf-sub">
-              Automated OSINT (Open-Source Intelligence) tool
+              Automated OSINT (Open-Source Intelligence) & Recon Tool
             </div>
           </div>
           <div class="ctf-tags">
@@ -1562,6 +1567,27 @@
             'cyberpark_pics/Picture10.png',
             'cyberpark_pics/Picture11.png',
             'cyberpark_pics/Picture12.png',
+          ],
+        },
+        reconis: {
+          title: 'Reconis (Automated OSINT & Reconnaissance)',
+          concept:
+            'A modular, asynchronous reconnaissance platform designed for automated information gathering and security surface mapping.',
+          architecture:
+            'A multi-tier architecture featuring an asynchronous Python scanning engine, a high-performance FastAPI backend, and a modern Next.js dashboard for real-time results visualization.',
+          stack: [
+            '<strong>Backend:</strong> FastAPI (Python) with aiohttp for high-concurrency scanning.',
+            '<strong>Frontend:</strong> Next.js & TypeScript with Tailwind CSS for a modern dashboard.',
+            '<strong>Tools:</strong> Playwright for headless browser automation and screenshots.',
+            '<strong>OSINT:</strong> Shodan API integration for enhanced infrastructure intelligence.',
+            '<strong>Infrastructure:</strong> Fully containerized using Docker & Docker Compose.',
+          ],
+          features: [
+            'Automated Subdomain Enumeration & DNS analysis.',
+            'High-speed Port Scanning & Service discovery.',
+            'Automated Web Screenshot capture for visual reconnaissance.',
+            'Vulnerability surface mapping and OSINT data correlation.',
+            'Professional PDF report generation with data visualization.',
           ],
         },
       };
