@@ -527,6 +527,12 @@
       .skill-item:hover .skill-img {
         filter: grayscale(0) opacity(1);
       }
+      [data-theme="dark"] .skill-img.dark-invert {
+        filter: grayscale(0.4) opacity(0.8) brightness(0) invert(1);
+      }
+      [data-theme="dark"] .skill-item:hover .skill-img.dark-invert {
+        filter: grayscale(0) opacity(1) brightness(0) invert(1);
+      }
       .skill-name {
         font-family: 'Share Tech Mono', monospace;
         font-size: 0.72rem;
@@ -538,10 +544,29 @@
       }
 
       /* CERTIFICATES */
-      .cert-grid {
-        display: grid;
-        grid-template-columns: 1fr 1fr;
-        gap: 1.2rem;
+      .cert-carousel-wrapper {
+        position: relative;
+        overflow: hidden;
+      }
+      .cert-carousel {
+        display: flex;
+        overflow-x: auto;
+        scroll-snap-type: x mandatory;
+        gap: 1rem;
+        padding: 0.5rem 0 1.5rem;
+        scrollbar-width: none;
+        -ms-overflow-style: none;
+        scroll-behavior: smooth;
+      }
+      .cert-carousel::-webkit-scrollbar {
+        display: none;
+      }
+      .cert-carousel-item {
+        flex: 0 0 100%;
+        scroll-snap-align: center;
+        text-decoration: none;
+        color: inherit;
+        display: block;
       }
 
       .cert-card {
@@ -551,6 +576,7 @@
         border-radius: 16px;
         box-shadow: var(--shadow-sm);
         transition: all 0.25s ease;
+        height: 100%;
       }
       .cert-card:hover {
         border-color: var(--green);
@@ -567,6 +593,9 @@
         justify-content: center;
         overflow: hidden;
         position: relative;
+      }
+      [data-theme="dark"] .cert-img-wrap {
+        background: #1a1a1a;
       }
       .cert-img-wrap img {
         width: 100%;
@@ -609,6 +638,68 @@
         font-family: 'Share Tech Mono', monospace;
         font-size: 0.67rem;
         color: var(--muted);
+      }
+
+      /* Carousel Nav */
+      .cert-nav {
+        position: absolute;
+        top: 50%;
+        transform: translateY(-50%);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        border: none;
+        background: rgba(255, 255, 255, 0.95);
+        color: #1a1a18;
+        cursor: pointer;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        z-index: 10;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+        transition: all 0.25s ease;
+        font-size: 1.5rem;
+        line-height: 1;
+      }
+      [data-theme="dark"] .cert-nav {
+        background: rgba(30, 30, 30, 0.95);
+        color: #eaeaea;
+        box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+      }
+      .cert-nav:hover {
+        background: var(--green);
+        color: #ffffff;
+        transform: translateY(-50%) scale(1.1);
+      }
+      .cert-nav.prev { left: 16px; }
+      .cert-nav.next { right: 16px; }
+      .cert-nav:disabled {
+        opacity: 0;
+        visibility: hidden;
+        pointer-events: none;
+      }
+
+      /* Carousel Dots */
+      .cert-dots {
+        display: flex;
+        justify-content: center;
+        gap: 0.4rem;
+        padding-top: 0.25rem;
+      }
+      .cert-dot {
+        width: 6px;
+        height: 6px;
+        border-radius: 50%;
+        background: var(--border);
+        border: none;
+        padding: 0;
+        cursor: pointer;
+        transition: all 0.25s ease;
+      }
+      .cert-dot.active {
+        background: var(--green);
+        width: 18px;
+        border-radius: 3px;
       }
 
       /* CTF */
@@ -869,9 +960,6 @@
         .avatar {
           width: 80px;
           height: 80px;
-        }
-        .cert-grid {
-          grid-template-columns: 1fr;
         }
         .ctf-row {
           grid-template-columns: 1fr;
@@ -1322,7 +1410,7 @@
                 <div class="skill-item">
                   <img
                     src="logo/SentinelOne_logo.svg.png"
-                    class="skill-img"
+                    class="skill-img dark-invert"
                     alt="SentinelOne"
                   />
                   <span class="skill-name">SentinelOne</span>
@@ -1334,7 +1422,7 @@
                 <div class="skill-item">
                   <img
                     src="logo/Wazuh-Logo-2022.png"
-                    class="skill-img"
+                    class="skill-img dark-invert"
                     alt="Wazuh"
                   />
                   <span class="skill-name">Wazuh</span>
@@ -1361,7 +1449,7 @@
                 <div class="skill-item">
                   <img
                     src="logo/Hack_The_Box_Logo_1.png"
-                    class="skill-img"
+                    class="skill-img dark-invert"
                     alt="HackTheBox"
                   />
                   <span class="skill-name">HackTheBox</span>
@@ -1494,166 +1582,68 @@
         <!-- CERTIFICATES -->
         <section>
           <div class="section-label">root@kali:~# tree ./certificates</div>
-          <div class="cert-grid">
-            <!-- cert 1 -->
-            <a
-              href="certificate/134_อรรถชาติ ชาญนคร.jpg"
-              target="_blank"
-              rel="noopener"
-              style="text-decoration: none; color: inherit; display: block"
-            >
-              <div class="cert-card">
-                <div class="cert-img-wrap">
-                  <img
-                    src="certificate/134_อรรถชาติ ชาญนคร.jpg"
-                    alt="Certificate"
-                    onerror="
-                      this.style.display = 'none';
-                      this.nextElementSibling.style.display = 'flex';
-                    "
-                  />
-                  <div class="cert-placeholder" style="display: none">
-                    <svg
-                      width="26"
-                      height="26"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="14" rx="2" />
-                      <path d="M8 21h8M12 17v4" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <span>view certificate</span>
+          <div class="cert-carousel-wrapper">
+            <button class="cert-nav prev" id="certPrev" aria-label="Previous">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 18 9 12 15 6"></polyline></svg>
+            </button>
+            <button class="cert-nav next" id="certNext" aria-label="Next">
+              <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="9 18 15 12 9 6"></polyline></svg>
+            </button>
+            <div class="cert-carousel" id="certCarousel">
+              <!-- cert 1 -->
+              <a class="cert-carousel-item" href="certificate/134_อรรถชาติ ชาญนคร.jpg" target="_blank" rel="noopener">
+                <div class="cert-card">
+                  <div class="cert-img-wrap">
+                    <img src="certificate/134_อรรถชาติ ชาญนคร.jpg" alt="Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                    <div class="cert-placeholder" style="display:none"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="10" r="3"/></svg><span>view certificate</span></div>
+                  </div>
+                  <div class="cert-info">
+                    <div class="cert-name">CTF Boot Camp Online 2026</div>
+                    <div class="cert-issuer">NCSA</div>
                   </div>
                 </div>
-                <div class="cert-info">
-                  <div class="cert-name">CTF Boot Camp Online 2026</div>
-                  <div class="cert-issuer">NCSA</div>
-                </div>
-              </div>
-            </a>
-
-            <!-- cert 2 -->
-            <a
-              href="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg"
-              target="_blank"
-              rel="noopener"
-              style="text-decoration: none; color: inherit; display: block"
-            >
-              <div class="cert-card">
-                <div class="cert-img-wrap">
-                  <img
-                    src="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg"
-                    alt="Certificate"
-                    onerror="
-                      this.style.display = 'none';
-                      this.nextElementSibling.style.display = 'flex';
-                    "
-                  />
-                  <div class="cert-placeholder" style="display: none">
-                    <svg
-                      width="26"
-                      height="26"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="14" rx="2" />
-                      <path d="M8 21h8M12 17v4" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <span>view certificate</span>
+              </a>
+              <!-- cert 2 -->
+              <a class="cert-carousel-item" href="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg" target="_blank" rel="noopener">
+                <div class="cert-card">
+                  <div class="cert-img-wrap">
+                    <img src="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg" alt="Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                    <div class="cert-placeholder" style="display:none"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="10" r="3"/></svg><span>view certificate</span></div>
+                  </div>
+                  <div class="cert-info">
+                    <div class="cert-name">Cyber Security 101</div>
+                    <div class="cert-issuer">TryHackMe</div>
                   </div>
                 </div>
-                <div class="cert-info">
-                  <div class="cert-name">Cyber Security 101</div>
-                  <div class="cert-issuer">TryHackMe</div>
-                </div>
-              </div>
-            </a>
-
-            <!-- cert 3 -->
-            <a
-              href="certificate/THM-T8OT03QFWC (1)_page-0001.jpg"
-              target="_blank"
-              rel="noopener"
-              style="text-decoration: none; color: inherit; display: block"
-            >
-              <div class="cert-card">
-                <div class="cert-img-wrap">
-                  <img
-                    src="certificate/THM-T8OT03QFWC (1)_page-0001.jpg"
-                    alt="Certificate"
-                    onerror="
-                      this.style.display = 'none';
-                      this.nextElementSibling.style.display = 'flex';
-                    "
-                  />
-                  <div class="cert-placeholder" style="display: none">
-                    <svg
-                      width="26"
-                      height="26"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="14" rx="2" />
-                      <path d="M8 21h8M12 17v4" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <span>view certificate</span>
+              </a>
+              <!-- cert 3 -->
+              <a class="cert-carousel-item" href="certificate/THM-T8OT03QFWC (1)_page-0001.jpg" target="_blank" rel="noopener">
+                <div class="cert-card">
+                  <div class="cert-img-wrap">
+                    <img src="certificate/THM-T8OT03QFWC (1)_page-0001.jpg" alt="Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                    <div class="cert-placeholder" style="display:none"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="10" r="3"/></svg><span>view certificate</span></div>
+                  </div>
+                  <div class="cert-info">
+                    <div class="cert-name">Love at First Breach - CTF</div>
+                    <div class="cert-issuer">TryHackMe</div>
                   </div>
                 </div>
-                <div class="cert-info">
-                  <div class="cert-name">Love at First Breach - CTF</div>
-                  <div class="cert-issuer">TryHackMe</div>
-                </div>
-              </div>
-            </a>
-
-            <!-- cert 4 -->
-            <a
-              href="certificate/04PBH2O9X3TKS_page-0001.jpg"
-              target="_blank"
-              rel="noopener"
-              style="text-decoration: none; color: inherit; display: block"
-            >
-              <div class="cert-card">
-                <div class="cert-img-wrap">
-                  <img
-                    src="certificate/04PBH2O9X3TKS_page-0001.jpg"
-                    alt="Certificate"
-                    onerror="
-                      this.style.display = 'none';
-                      this.nextElementSibling.style.display = 'flex';
-                    "
-                  />
-                  <div class="cert-placeholder" style="display: none">
-                    <svg
-                      width="26"
-                      height="26"
-                      fill="none"
-                      stroke="currentColor"
-                      stroke-width="1.5"
-                      viewBox="0 0 24 24"
-                    >
-                      <rect x="3" y="3" width="18" height="14" rx="2" />
-                      <path d="M8 21h8M12 17v4" />
-                      <circle cx="12" cy="10" r="3" />
-                    </svg>
-                    <span>view certificate</span>
+              </a>
+              <!-- cert 4 -->
+              <a class="cert-carousel-item" href="certificate/04PBH2O9X3TKS_page-0001.jpg" target="_blank" rel="noopener">
+                <div class="cert-card">
+                  <div class="cert-img-wrap">
+                    <img src="certificate/04PBH2O9X3TKS_page-0001.jpg" alt="Certificate" onerror="this.style.display='none';this.nextElementSibling.style.display='flex'" />
+                    <div class="cert-placeholder" style="display:none"><svg width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="14" rx="2"/><path d="M8 21h8M12 17v4"/><circle cx="12" cy="10" r="3"/></svg><span>view certificate</span></div>
+                  </div>
+                  <div class="cert-info">
+                    <div class="cert-name">Basic Cybersecurity</div>
+                    <div class="cert-issuer">NCSA Mooc Cyber-Learning</div>
                   </div>
                 </div>
-                <div class="cert-info">
-                  <div class="cert-name">Basic Cybersecurity</div>
-                  <div class="cert-issuer">NCSA Mooc Cyber-Learning</div>
-                </div>
-              </div>
-            </a>
+              </a>
+            </div>
+            <div class="cert-dots" id="certDots"></div>
           </div>
         </section>
 
@@ -2105,6 +2095,81 @@
         obs.observe(el);
       });
 
+      // Certificate Carousel
+      (() => {
+        const carousel = document.getElementById('certCarousel');
+        const prevBtn = document.getElementById('certPrev');
+        const nextBtn = document.getElementById('certNext');
+        const dotsContainer = document.getElementById('certDots');
+        if (!carousel) return;
+
+        const items = carousel.querySelectorAll('.cert-carousel-item');
+        const itemsPerView = () => 1;
+        const totalPages = () => Math.ceil(items.length / itemsPerView());
+
+        function buildDots() {
+          dotsContainer.innerHTML = '';
+          const pages = totalPages();
+          for (let i = 0; i < pages; i++) {
+            const dot = document.createElement('button');
+            dot.className = 'cert-dot' + (i === 0 ? ' active' : '');
+            dot.setAttribute('aria-label', `Go to page ${i + 1}`);
+            dot.addEventListener('click', () => {
+              const item = items[i * itemsPerView()];
+              if (item) carousel.scrollTo({ left: item.offsetLeft - carousel.offsetLeft, behavior: 'smooth' });
+            });
+            dotsContainer.appendChild(dot);
+          }
+        }
+
+        function updateState() {
+          const scrollLeft = carousel.scrollLeft;
+          const maxScroll = carousel.scrollWidth - carousel.clientWidth;
+          prevBtn.disabled = scrollLeft <= 5;
+          nextBtn.disabled = scrollLeft >= maxScroll - 5;
+
+          const dots = dotsContainer.querySelectorAll('.cert-dot');
+          const perView = itemsPerView();
+          let activeIdx = 0;
+          items.forEach((item, i) => {
+            if (item.offsetLeft - carousel.offsetLeft <= scrollLeft + 10) {
+              activeIdx = Math.floor(i / perView);
+            }
+          });
+          dots.forEach((d, i) => d.classList.toggle('active', i === activeIdx));
+        }
+
+        function getCurrentIdx() {
+          const scrollLeft = carousel.scrollLeft;
+          let activeIdx = 0;
+          items.forEach((item, i) => {
+            if (item.offsetLeft - carousel.offsetLeft <= scrollLeft + 10) {
+              activeIdx = i;
+            }
+          });
+          return activeIdx;
+        }
+
+        prevBtn.addEventListener('click', () => {
+          let idx = getCurrentIdx() - 1;
+          if (idx < 0) idx = 0;
+          const item = items[idx];
+          if (item) carousel.scrollTo({ left: item.offsetLeft - carousel.offsetLeft, behavior: 'smooth' });
+        });
+
+        nextBtn.addEventListener('click', () => {
+          let idx = getCurrentIdx() + 1;
+          if (idx >= items.length) idx = items.length - 1;
+          const item = items[idx];
+          if (item) carousel.scrollTo({ left: item.offsetLeft - carousel.offsetLeft, behavior: 'smooth' });
+        });
+
+        carousel.addEventListener('scroll', updateState);
+        window.addEventListener('resize', () => { buildDots(); updateState(); });
+        buildDots();
+        setTimeout(updateState, 100);
+      })();
+
       // Scroll Progress Bar
       window.addEventListener('scroll', () => {
         const winScroll =
@@ -2215,7 +2280,8 @@
 
       function checkRecon() {
         if (document.documentElement.getAttribute('data-theme') === 'dark') {
-          if (!hackedStarted) {
+          if (!hackedStarted && !sessionStorage.getItem('reconShown')) {
+            sessionStorage.setItem('reconShown', 'true');
             setTimeout(startRecon, 500);
           }
         }
