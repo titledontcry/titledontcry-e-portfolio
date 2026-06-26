@@ -1730,31 +1730,97 @@
       class="modal-overlay"
       onclick="closeModal(event, 'modal-reconis')"
     >
-      <div class="modal-content" onclick="event.stopPropagation()">
+      <div class="modal-content" onclick="event.stopPropagation()" style="max-width: 680px;">
         <button
           class="modal-close"
           onclick="closeModal(event, 'modal-reconis')"
         >
           ✕
         </button>
-        <div
-          class="project-icon"
-          style="background: var(--blue); color: white; margin-bottom: 1rem"
-        >
-          🔍
+
+        <!-- Header -->
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.2rem;">
+          <div class="project-icon" style="background: var(--blue); color: white; flex-shrink: 0;">🔍</div>
+          <div>
+            <h2 style="margin-bottom: 0.3rem;">Reconis</h2>
+            <p style="color: #64748b; font-size: 0.9rem; font-family: 'Space Mono', monospace; max-width: none;">OSINT & Vulnerability Reconnaissance Platform</p>
+          </div>
         </div>
-        <h2 style="margin-bottom: 1rem">Reconis</h2>
-        <div class="project-tags" style="margin-bottom: 1.5rem">
+
+        <!-- Badges -->
+        <div class="project-tags" style="margin-bottom: 1.5rem;">
           <span class="badge">OSINT</span>
           <span class="badge">Python</span>
+          <span class="badge">FastAPI</span>
+          <span class="badge">Next.js</span>
+          <span class="badge">Docker</span>
+          <span class="badge">Nuclei</span>
         </div>
-        <p style="margin-bottom: 1rem; color: var(--text-color)">
-          <strong>Reconis</strong> is an Automated OSINT (Open-Source
-          Intelligence) and Reconnaissance Tool. It is designed to gather
-          publicly available information and provide actionable insights for
-          threat detection.
+
+        <!-- Overview -->
+        <p style="color: var(--text-color); line-height: 1.7; margin-bottom: 1.5rem;">
+          A professional, modular, and fully automated OSINT and vulnerability reconnaissance platform. It automates subdomain enumeration, service fingerprinting, screenshot capture, directory fuzzing, domain takeover detection, and vulnerability correlation — producing executive-ready PDF reports.
         </p>
-        <p><em>(More details to be added...)</em></p>
+
+        <!-- Architecture -->
+        <div style="background: #f8fafc; border: 2px solid var(--border-color); border-radius: 10px; padding: 1.2rem; margin-bottom: 1.5rem;">
+          <h4 style="font-size: 1rem; margin-bottom: 0.8rem; font-family: 'Space Mono', monospace; color: var(--green-dark);">// Architecture</h4>
+          <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1rem;">
+            <div>
+              <p style="font-weight: 700; font-size: 0.85rem; margin-bottom: 0.4rem; max-width: none;">🖥️ Frontend</p>
+              <ul style="list-style: none; font-size: 0.85rem; color: #444; line-height: 1.9;">
+                <li>→ Next.js (App Router)</li>
+                <li>→ TypeScript</li>
+                <li>→ Tailwind CSS Dashboard</li>
+                <li>→ Real-time WebSockets</li>
+              </ul>
+            </div>
+            <div>
+              <p style="font-weight: 700; font-size: 0.85rem; margin-bottom: 0.4rem; max-width: none;">⚙️ Backend</p>
+              <ul style="list-style: none; font-size: 0.85rem; color: #444; line-height: 1.9;">
+                <li>→ FastAPI + Uvicorn</li>
+                <li>→ Playwright (Headless Chrome)</li>
+                <li>→ SQLite Database</li>
+                <li>→ WeasyPrint PDF Engine</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
+        <!-- Features -->
+        <h4 style="font-size: 1rem; margin-bottom: 0.8rem; font-family: 'Space Mono', monospace; color: var(--green-dark);">// Key Features</h4>
+        <div style="display: flex; flex-direction: column; gap: 0.6rem; margin-bottom: 1.5rem;">
+          <div style="display: flex; gap: 0.7rem; align-items: flex-start;">
+            <span style="font-size: 1rem; flex-shrink: 0;">🔍</span>
+            <p style="font-size: 0.9rem; color: #333; max-width: none;"><strong>Passive Recon</strong> — Subdomain harvesting & historical endpoint leaks via Wayback Machine</p>
+          </div>
+          <div style="display: flex; gap: 0.7rem; align-items: flex-start;">
+            <span style="font-size: 1rem; flex-shrink: 0;">⚡</span>
+            <p style="font-size: 0.9rem; color: #333; max-width: none;"><strong>Async Active Scanning</strong> — Parallelized Nmap port scanning & HTTP header fingerprinting</p>
+          </div>
+          <div style="display: flex; gap: 0.7rem; align-items: flex-start;">
+            <span style="font-size: 1rem; flex-shrink: 0;">📸</span>
+            <p style="font-size: 0.9rem; color: #333; max-width: none;"><strong>Visual Recon</strong> — Auto-screenshots of live subdomains using headless Playwright</p>
+          </div>
+          <div style="display: flex; gap: 0.7rem; align-items: flex-start;">
+            <span style="font-size: 1rem; flex-shrink: 0;">🛡️</span>
+            <p style="font-size: 0.9rem; color: #333; max-width: none;"><strong>Takeover Detection</strong> — Identifies dangling DNS CNAMEs & fuzzes subdomain paths</p>
+          </div>
+          <div style="display: flex; gap: 0.7rem; align-items: flex-start;">
+            <span style="font-size: 1rem; flex-shrink: 0;">🎯</span>
+            <p style="font-size: 0.9rem; color: #333; max-width: none;"><strong>Vuln Intelligence</strong> — CVE correlation via NVD + Nuclei template-based scanning</p>
+          </div>
+          <div style="display: flex; gap: 0.7rem; align-items: flex-start;">
+            <span style="font-size: 1rem; flex-shrink: 0;">📊</span>
+            <p style="font-size: 0.9rem; color: #333; max-width: none;"><strong>Executive Reports</strong> — Auto-generated PDF reports with Matplotlib charts</p>
+          </div>
+        </div>
+
+        <!-- GitHub Link -->
+        <a href="https://github.com/titledontcry/automated_osint" target="_blank" class="btn btn-dark" style="font-size: 0.95rem; padding: 0.6rem 1.4rem; text-decoration: none; display: inline-flex; gap: 0.5rem;">
+          <svg width="18" height="18" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
+          View on GitHub
+        </a>
       </div>
     </div>
 
