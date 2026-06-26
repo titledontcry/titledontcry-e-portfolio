@@ -1,1214 +1,1560 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Attachat Channakorn | Portfolio</title>
-    <link rel="icon" href="favicon-circle.png" type="image/png">
-    <link href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+    <link rel="icon" href="favicon-circle.png" type="image/png" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Outfit:wght@400;600;700;800&family=Space+Mono:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            /* Neo Brutalism Green Theme */
-            --bg-color: #f4f6f5;
-            --text-color: #0f172a;
-            --border-color: #0f172a;
-            
-            /* Primary Colors */
-            --green: #10b981;
-            --green-light: #34d399;
-            --green-dark: #059669;
-            
-            /* Accent Colors */
-            --yellow: #fcd34d;
-            --blue: #60a5fa;
-            --pink: #f472b6;
-            
-            --border-width: 3px;
-            --shadow-solid: 6px 6px 0px 0px var(--border-color);
-            --shadow-solid-sm: 4px 4px 0px 0px var(--border-color);
-            --shadow-solid-hover: 8px 8px 0px 0px var(--border-color);
-        }
+      :root {
+        /* Neo Brutalism Green Theme */
+        --bg-color: #f4f6f5;
+        --text-color: #0f172a;
+        --border-color: #0f172a;
 
-        * {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        /* Primary Colors */
+        --green: #10b981;
+        --green-light: #34d399;
+        --green-dark: #059669;
 
-        html {
-            scroll-behavior: smooth;
-        }
+        /* Accent Colors */
+        --yellow: #fcd34d;
+        --blue: #60a5fa;
+        --pink: #f472b6;
 
-        body {
-            font-family: 'Outfit', sans-serif;
-            background-color: var(--bg-color);
-            color: var(--text-color);
-            line-height: 1.6;
-            overflow-x: hidden;
-            background-image: radial-gradient(rgba(15, 23, 42, 0.15) 1.5px, transparent 1.5px);
-            background-size: 32px 32px;
-            background-position: 0 0;
-            background-attachment: fixed;
-        }
+        --border-width: 3px;
+        --shadow-solid: 6px 6px 0px 0px var(--border-color);
+        --shadow-solid-sm: 4px 4px 0px 0px var(--border-color);
+        --shadow-solid-hover: 8px 8px 0px 0px var(--border-color);
+      }
 
-        p {
-            max-width: 75ch;
-        }
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
 
-        .container {
-            max-width: 1100px;
-            margin: 0 auto;
-            padding-left: 2rem;
-            padding-right: 2rem;
-        }
+      html {
+        scroll-behavior: smooth;
+      }
 
-        /* Typography */
-        h1, h2, h3, h4 {
-            font-weight: 800;
-            line-height: 1.2;
-            color: var(--text-color);
-        }
+      body {
+        font-family: 'Outfit', sans-serif;
+        background-color: var(--bg-color);
+        color: var(--text-color);
+        line-height: 1.6;
+        overflow-x: hidden;
+        background-image: radial-gradient(
+          rgba(15, 23, 42, 0.15) 1.5px,
+          transparent 1.5px
+        );
+        background-size: 32px 32px;
+        background-position: 0 0;
+        background-attachment: fixed;
+      }
 
-        .mono {
-            font-family: 'Space Mono', monospace;
-        }
+      p {
+        max-width: 75ch;
+      }
 
-        /* High contrast highlights */
-        .highlight-green { 
-            background-color: var(--green); 
-            color: #ffffff; 
-            padding: 0 8px; 
-            border: 2px solid var(--border-color); 
-            display: inline-block; 
-            transform: rotate(-2deg); 
-        }
-        .highlight-yellow { 
-            background-color: var(--yellow); 
-            color: var(--text-color); 
-            padding: 0 8px; 
-            border: 2px solid var(--border-color); 
-            display: inline-block; 
-            transform: rotate(1deg); 
-        }
+      .container {
+        max-width: 1100px;
+        margin: 0 auto;
+        padding-left: 2rem;
+        padding-right: 2rem;
+      }
 
-        /* Buttons & Badges */
-        .btn {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.5rem;
-            font-family: 'Outfit', sans-serif;
-            font-weight: 700;
-            font-size: 1.05rem;
-            text-decoration: none;
-            padding: 0.8rem 1.8rem;
-            border: var(--border-width) solid var(--border-color);
-            border-radius: 8px;
-            box-shadow: var(--shadow-solid-sm);
-            transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-            cursor: pointer;
-            color: var(--text-color);
-            background-color: white;
-        }
+      /* Typography */
+      h1,
+      h2,
+      h3,
+      h4 {
+        font-weight: 800;
+        line-height: 1.2;
+        color: var(--text-color);
+      }
 
-        .btn:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: var(--shadow-solid-hover);
-        }
+      .mono {
+        font-family: 'Space Mono', monospace;
+      }
 
-        .btn:active {
-            transform: translate(3px, 3px);
-            box-shadow: 0px 0px 0px 0px var(--border-color);
-        }
+      /* High contrast highlights */
+      .highlight-green {
+        background-color: var(--green);
+        color: #ffffff;
+        padding: 0 8px;
+        border: 2px solid var(--border-color);
+        display: inline-block;
+        transform: rotate(-2deg);
+      }
+      .highlight-yellow {
+        background-color: var(--yellow);
+        color: var(--text-color);
+        padding: 0 8px;
+        border: 2px solid var(--border-color);
+        display: inline-block;
+        transform: rotate(1deg);
+      }
 
-        .btn-green { background-color: var(--green); color: white; }
-        .btn-dark { background-color: var(--text-color); color: white; }
+      /* Buttons & Badges */
+      .btn {
+        display: inline-flex;
+        align-items: center;
+        justify-content: center;
+        gap: 0.5rem;
+        font-family: 'Outfit', sans-serif;
+        font-weight: 700;
+        font-size: 1.05rem;
+        text-decoration: none;
+        padding: 0.8rem 1.8rem;
+        border: var(--border-width) solid var(--border-color);
+        border-radius: 8px;
+        box-shadow: var(--shadow-solid-sm);
+        transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+        cursor: pointer;
+        color: var(--text-color);
+        background-color: white;
+      }
 
-        .badge {
-            background: white;
-            border: 2px solid var(--border-color);
-            padding: 0.35rem 0.8rem;
-            border-radius: 20px;
-            font-weight: 700;
-            font-size: 0.85rem;
-            box-shadow: 2px 2px 0px 0px var(--border-color);
-            display: inline-flex;
-            align-items: center;
-            gap: 0.4rem;
-            color: var(--text-color);
-        }
+      .btn:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: var(--shadow-solid-hover);
+      }
 
-        .badge-green { background: var(--green-light); color: var(--text-color); }
+      .btn:active {
+        transform: translate(3px, 3px);
+        box-shadow: 0px 0px 0px 0px var(--border-color);
+      }
 
-        /* Layout Elements */
-        section {
-            padding-top: 5rem;
-            padding-bottom: 4rem;
-            position: relative;
-        }
-        
-        .section-header {
-            margin-bottom: 3.5rem;
-            display: flex;
-            align-items: flex-end;
-            gap: 1rem;
-        }
+      .btn-green {
+        background-color: var(--green);
+        color: white;
+      }
+      .btn-dark {
+        background-color: var(--text-color);
+        color: white;
+      }
 
-        .section-header h2 {
-            font-size: clamp(2.5rem, 4vw, 3.5rem);
-            text-transform: uppercase;
-        }
+      .badge {
+        background: white;
+        border: 2px solid var(--border-color);
+        padding: 0.35rem 0.8rem;
+        border-radius: 20px;
+        font-weight: 700;
+        font-size: 0.85rem;
+        box-shadow: 2px 2px 0px 0px var(--border-color);
+        display: inline-flex;
+        align-items: center;
+        gap: 0.4rem;
+        color: var(--text-color);
+      }
 
-        .section-header .mono {
-            color: var(--green-dark);
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 0.5rem;
-            display: inline-block;
-        }
+      .badge-green {
+        background: var(--green-light);
+        color: var(--text-color);
+      }
 
-        /* Navbar */
-        .navbar-wrapper {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            display: flex;
-            justify-content: center;
-            z-index: 1000;
-        }
+      /* Layout Elements */
+      section {
+        padding-top: 5rem;
+        padding-bottom: 4rem;
+        position: relative;
+      }
 
-        .navbar {
-            width: 100%;
-            max-width: 100%;
-            background: rgba(255, 255, 255, 0.95);
-            backdrop-filter: blur(12px);
-            border-bottom: var(--border-width) solid var(--border-color);
-            padding: 0.8rem 2rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            overflow-x: auto;
-            -webkit-overflow-scrolling: touch;
-            scrollbar-width: none; /* Firefox */
-        }
-        
-        .navbar::-webkit-scrollbar {
-            display: none; /* Chrome, Safari, Opera */
-        }
+      .section-header {
+        margin-bottom: 3.5rem;
+        display: flex;
+        align-items: flex-end;
+        gap: 1rem;
+      }
 
-        .nav-logo {
-            font-weight: 800;
-            font-size: 1.2rem;
-            text-decoration: none;
-            background: var(--green);
-            color: white;
-            padding: 0.3rem 0.8rem;
-            border-radius: 20px;
-            border: 2px solid var(--border-color);
-            flex-shrink: 0;
-        }
+      .section-header h2 {
+        font-size: clamp(2.5rem, 4vw, 3.5rem);
+        text-transform: uppercase;
+      }
 
-        .nav-links {
-            display: flex;
-            gap: 1.5rem;
-            list-style: none;
-            margin: 0 1rem;
-            white-space: nowrap;
-        }
+      .section-header .mono {
+        color: var(--green-dark);
+        font-size: 1rem;
+        font-weight: 700;
+        margin-bottom: 0.5rem;
+        display: inline-block;
+      }
 
-        .nav-links a {
-            text-decoration: none;
-            color: var(--text-color);
-            font-weight: 700;
-            font-size: 1rem;
-            padding: 0.3rem 0;
-            position: relative;
-        }
-        
-        /* Subtle underline hover effect for nav */
-        .nav-links a::after {
-            content: '';
-            position: absolute;
-            width: 0;
-            height: 3px;
-            bottom: 0;
-            left: 0;
-            background-color: var(--green-dark);
-            transition: width 0.3s ease;
-        }
-        .nav-links a:hover::after {
-            width: 100%;
-        }
+      /* Navbar */
+      .navbar-wrapper {
+        position: absolute;
+        top: 1.5rem;
+        left: 0;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        z-index: 1000;
+        pointer-events: none; /* Let clicks pass through empty space */
+      }
 
-        .nav-contact-btn {
-            padding: 0.4rem 1.2rem; 
-            font-size: 0.95rem;
-            flex-shrink: 0;
-        }
+      .navbar {
+        pointer-events: auto; /* Enable clicks on the navbar itself */
+        width: 90%;
+        max-width: 800px;
+        background: rgba(255, 255, 255, 0.95);
+        backdrop-filter: blur(10px);
+        border: var(--border-width) solid var(--border-color);
+        border-radius: 100px;
+        padding: 0.7rem 1.5rem;
+        box-shadow: var(--shadow-solid-sm);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        overflow-x: auto;
+        -webkit-overflow-scrolling: touch;
+        scrollbar-width: none; /* Firefox */
+      }
 
-        /* Hero */
+      .navbar::-webkit-scrollbar {
+        display: none; /* Chrome, Safari, Opera */
+      }
+
+      .nav-logo {
+        font-weight: 800;
+        font-size: 1.2rem;
+        text-decoration: none;
+        background: var(--green);
+        color: white;
+        padding: 0.3rem 0.8rem;
+        border-radius: 20px;
+        border: 2px solid var(--border-color);
+        flex-shrink: 0;
+      }
+
+      .nav-links {
+        display: flex;
+        gap: 1.5rem;
+        list-style: none;
+        margin: 0 1rem;
+        white-space: nowrap;
+      }
+
+      .nav-links a {
+        text-decoration: none;
+        color: var(--text-color);
+        font-weight: 700;
+        font-size: 1rem;
+        padding: 0.3rem 0;
+        position: relative;
+      }
+
+      /* Subtle underline hover effect for nav */
+      .nav-links a::after {
+        content: '';
+        position: absolute;
+        width: 0;
+        height: 3px;
+        bottom: 0;
+        left: 0;
+        background-color: var(--green-dark);
+        transition: width 0.3s ease;
+      }
+      .nav-links a:hover::after {
+        width: 100%;
+      }
+
+      .nav-contact-btn {
+        padding: 0.4rem 1.2rem;
+        font-size: 0.95rem;
+        flex-shrink: 0;
+      }
+
+      /* Hero */
+      .hero {
+        padding-top: 8rem;
+        padding-bottom: 4rem;
+        display: grid;
+        grid-template-columns: 1.2fr 0.8fr;
+        gap: 4rem;
+        align-items: center;
+      }
+
+      .hero-content h1 {
+        font-size: clamp(3rem, 5vw, 4.8rem);
+        margin-bottom: 1.2rem;
+        letter-spacing: -1.5px;
+      }
+
+      .hero-subtitle {
+        font-size: 1.2rem;
+        font-weight: 600;
+        color: #444;
+        margin-bottom: 1.8rem;
+        display: flex;
+        flex-wrap: wrap;
+        gap: 0.6rem;
+        align-items: center;
+      }
+
+      .hero-desc {
+        font-size: 1.15rem;
+        margin-bottom: 2.5rem;
+        max-width: 600px; /* Constrain reading width for UX */
+        background: white;
+        padding: 1.5rem 1.8rem;
+        border: 2px solid var(--border-color);
+        border-radius: 8px;
+        box-shadow: 4px 4px 0px 0px var(--green-light);
+        line-height: 1.7;
+      }
+
+      .hero-actions {
+        display: flex;
+        gap: 1.2rem;
+        flex-wrap: wrap;
+      }
+
+      .hero-image-wrapper {
+        position: relative;
+        max-width: 400px;
+        margin: 0 auto;
+      }
+
+      .hero-image {
+        width: 100%;
+        aspect-ratio: 1;
+        object-fit: cover;
+        border: var(--border-width) solid var(--border-color);
+        border-radius: 24px;
+        box-shadow: var(--shadow-solid);
+        background: var(--yellow);
+      }
+
+      .hero-decor-1 {
+        position: absolute;
+        bottom: -15px;
+        left: -20px;
+        background: var(--green);
+        color: white;
+        border: 2px solid var(--border-color);
+        padding: 0.5rem 1.2rem;
+        border-radius: 8px;
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        font-size: 0.95rem;
+        transform: rotate(-8deg);
+        box-shadow: 3px 3px 0px 0px var(--border-color);
+      }
+
+      /* Marquee */
+      .marquee {
+        background: var(--green);
+        color: white;
+        padding: 1.2rem 0;
+        border-top: var(--border-width) solid var(--border-color);
+        border-bottom: var(--border-width) solid var(--border-color);
+        overflow: hidden;
+        white-space: nowrap;
+        display: flex;
+        transform: rotate(-2deg) scale(1.05);
+        box-shadow: 0 4px 0 0 var(--border-color);
+        position: relative;
+        z-index: 10;
+      }
+
+      .marquee-content {
+        font-family: 'Space Mono', monospace;
+        font-weight: 700;
+        font-size: 1.25rem;
+        animation: slide 25s linear infinite;
+      }
+
+      @keyframes slide {
+        0% {
+          transform: translateX(0);
+        }
+        100% {
+          transform: translateX(-50%);
+        }
+      }
+
+      /* Skills Grid */
+      .skills-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        gap: 2rem;
+      }
+
+      .skill-category {
+        background: white;
+        border: var(--border-width) solid var(--border-color);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow-solid-sm);
+        display: flex;
+        flex-direction: column;
+      }
+
+      .skill-header {
+        background: var(--text-color);
+        color: white;
+        padding: 1.2rem 1.5rem;
+        font-weight: 800;
+        font-size: 1.2rem;
+        border-bottom: var(--border-width) solid var(--border-color);
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+      }
+
+      .skill-body-list {
+        padding: 1.5rem;
+        display: flex;
+        flex-direction: column;
+        gap: 0.75rem;
+        flex-grow: 1;
+        font-family: 'Space Mono', monospace;
+        font-size: 0.9rem;
+        font-weight: 700;
+        color: var(--text-color);
+        letter-spacing: -0.3px;
+      }
+
+      .skill-item {
+        display: flex;
+        align-items: center;
+        gap: 0.8rem;
+      }
+
+      .skill-item .bullet {
+        color: var(--green-dark);
+        font-weight: 800;
+      }
+
+      .skill-tag:hover .skill-icon {
+        transform: translateY(-3px);
+      }
+
+      /* CTF & Projects */
+      .bento-grid {
+        display: grid;
+        grid-template-columns: repeat(12, 1fr);
+        gap: 1.5rem;
+      }
+
+      .bento-item {
+        grid-column: span 12;
+      }
+
+      @media (min-width: 900px) {
+        .bento-item-large {
+          grid-column: span 8;
+        }
+        .bento-item-small {
+          grid-column: span 4;
+        }
+        .bento-item-half {
+          grid-column: span 6;
+        }
+      }
+
+      .project-card {
+        display: flex;
+        flex-direction: column;
+        height: 100%;
+        background: white;
+        border: var(--border-width) solid var(--border-color);
+        border-radius: 12px;
+        box-shadow: var(--shadow-solid);
+        padding: 2.2rem;
+        cursor: pointer;
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+      }
+
+      .project-card:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: var(--shadow-solid-hover);
+      }
+
+      .project-top {
+        display: flex;
+        justify-content: space-between;
+        align-items: flex-start;
+        margin-bottom: 1.2rem;
+      }
+
+      .project-icon {
+        width: 56px;
+        height: 56px;
+        background: var(--green-light);
+        border: 2px solid var(--border-color);
+        border-radius: 12px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-size: 1.8rem;
+        box-shadow: 2px 2px 0px 0px var(--border-color);
+      }
+
+      .project-title {
+        font-size: 1.6rem;
+        font-weight: 800;
+        margin-bottom: 0.6rem;
+      }
+
+      .project-desc {
+        color: #333;
+        margin-bottom: 1.8rem;
+        flex-grow: 1;
+        line-height: 1.6;
+        max-width: 65ch; /* Optimal reading length */
+      }
+
+      .project-tags {
+        display: flex;
+        gap: 0.6rem;
+        flex-wrap: wrap;
+        margin-top: auto;
+      }
+
+      /* Certifications */
+      .cert-grid {
+        display: grid;
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+        gap: 2.5rem;
+      }
+
+      .cert-card {
+        background: white;
+        border: var(--border-width) solid var(--border-color);
+        border-radius: 12px;
+        overflow: hidden;
+        box-shadow: var(--shadow-solid-sm);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        text-decoration: none;
+        color: inherit;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .cert-card:hover {
+        transform: translate(-4px, -4px);
+        box-shadow: var(--shadow-solid-hover);
+      }
+
+      .cert-image-container {
+        width: 100%;
+        aspect-ratio: 16/11;
+        border-bottom: var(--border-width) solid var(--border-color);
+        background: #e2e8f0;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        overflow: hidden;
+      }
+
+      .cert-image-container img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+
+      .cert-info {
+        padding: 1.5rem;
+        background: white;
+      }
+
+      .cert-info h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.5rem;
+        line-height: 1.3;
+      }
+
+      .cert-info p {
+        color: #555;
+        font-size: 0.95rem;
+        font-family: 'Space Mono', monospace;
+      }
+
+      /* Footer / Contact */
+      footer {
+        background: var(--text-color);
+        color: #f1f5f9;
+        padding: 5rem 2rem 2rem;
+        border-top: var(--border-width) solid var(--border-color);
+      }
+
+      .footer-grid {
+        max-width: 1100px;
+        margin: 0 auto;
+        display: grid;
+        grid-template-columns: 2fr 1fr 1.5fr;
+        gap: 4rem;
+        margin-bottom: 4rem;
+      }
+
+      .footer-logo {
+        display: flex;
+        align-items: center;
+        gap: 1rem;
+        margin-bottom: 1.2rem;
+      }
+
+      .footer-logo .logo-icon {
+        background: white;
+        color: var(--text-color);
+        width: 44px;
+        height: 44px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        font-weight: 800;
+        font-size: 1.2rem;
+        border: 2px solid var(--text-color); /* Kept neat inside the dark background */
+      }
+
+      .footer-logo .logo-text {
+        font-size: 1.6rem;
+        font-weight: 800;
+        color: white;
+      }
+
+      .footer-bio {
+        color: #94a3b8;
+        font-size: 1rem;
+        line-height: 1.7;
+        margin-bottom: 2rem;
+        max-width: 380px;
+      }
+
+      .footer-socials {
+        display: flex;
+        gap: 1rem;
+      }
+
+      .social-btn {
+        background: var(--green);
+        color: white;
+        width: 46px;
+        height: 46px;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        border: 2px solid var(--border-color);
+        transition:
+          transform 0.2s,
+          box-shadow 0.2s;
+        box-shadow: 2px 2px 0px 0px var(--border-color);
+      }
+
+      .social-btn:hover {
+        transform: translate(-2px, -2px);
+        box-shadow: 4px 4px 0px 0px var(--border-color);
+        background: var(--green-light);
+        color: var(--text-color);
+      }
+
+      .footer-heading {
+        font-size: 1.25rem;
+        color: white;
+        margin-bottom: 1.5rem;
+        font-weight: 700;
+      }
+
+      .footer-links {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        gap: 1.2rem;
+      }
+
+      .footer-links a {
+        color: #94a3b8;
+        text-decoration: none;
+        transition: color 0.2s;
+        font-weight: 600;
+      }
+
+      .footer-links a:hover {
+        color: var(--green-light);
+      }
+
+      .footer-email {
+        display: inline-flex;
+        align-items: center;
+        gap: 0.8rem;
+        color: #94a3b8;
+        text-decoration: none;
+        transition: color 0.2s;
+        font-weight: 600;
+      }
+
+      .footer-email:hover {
+        color: var(--green-light);
+      }
+
+      .footer-bottom {
+        max-width: 1100px;
+        margin: 0 auto;
+        border-top: 1px solid rgba(255, 255, 255, 0.1);
+        padding-top: 2rem;
+        text-align: center;
+        color: #64748b;
+        font-size: 0.95rem;
+        font-family: 'Space Mono', monospace;
+      }
+
+      .footer-bottom p {
+        max-width: none;
+        margin: 0 auto;
+      }
+
+      /* Responsive Breakpoints */
+      @media (max-width: 900px) {
         .hero {
-            padding-top: 8rem;
-            padding-bottom: 4rem;
-            display: grid;
-            grid-template-columns: 1.2fr 0.8fr;
-            gap: 4rem;
-            align-items: center;
+          grid-template-columns: 1fr;
+          padding-top: 8rem;
+          gap: 3rem;
+          text-align: center;
         }
-
-        .hero-content h1 {
-            font-size: clamp(3rem, 5vw, 4.8rem);
-            margin-bottom: 1.2rem;
-            letter-spacing: -1.5px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.2rem;
-            font-weight: 600;
-            color: #444;
-            margin-bottom: 1.8rem;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 0.6rem;
-            align-items: center;
-        }
-
         .hero-desc {
-            font-size: 1.15rem;
-            margin-bottom: 2.5rem;
-            max-width: 600px; /* Constrain reading width for UX */
-            background: white;
-            padding: 1.5rem 1.8rem;
-            border: 2px solid var(--border-color);
-            border-radius: 8px;
-            box-shadow: 4px 4px 0px 0px var(--green-light);
-            line-height: 1.7;
+          margin: 0 auto 2.5rem auto;
+          text-align: left;
         }
-
         .hero-actions {
-            display: flex;
-            gap: 1.2rem;
-            flex-wrap: wrap;
+          justify-content: center;
         }
+        .hero-subtitle {
+          justify-content: center;
+        }
+        .section-header {
+          flex-direction: column;
+          align-items: flex-start;
+          gap: 0.5rem;
+        }
+      }
 
-        .hero-image-wrapper {
-            position: relative;
-            max-width: 400px;
-            margin: 0 auto;
+      @media (max-width: 768px) {
+        section {
+          padding-top: 5rem;
+          padding-bottom: 3rem;
         }
-
-        .hero-image {
-            width: 100%;
-            aspect-ratio: 1;
-            object-fit: cover;
-            border: var(--border-width) solid var(--border-color);
-            border-radius: 24px;
-            box-shadow: var(--shadow-solid);
-            background: var(--yellow);
+        .navbar {
+          padding: 0.6rem 1rem;
+          justify-content: flex-start;
+          gap: 1rem;
         }
-        
-        .hero-decor-1 {
-            position: absolute;
-            bottom: -15px;
-            left: -20px;
-            background: var(--green);
-            color: white;
-            border: 2px solid var(--border-color);
-            padding: 0.5rem 1.2rem;
-            border-radius: 8px;
-            font-family: 'Space Mono', monospace;
-            font-weight: 700;
-            font-size: 0.95rem;
-            transform: rotate(-8deg);
-            box-shadow: 3px 3px 0px 0px var(--border-color);
+        .nav-logo {
+          position: sticky;
+          left: 0;
         }
-
-        /* Marquee */
-        .marquee {
-            background: var(--green);
-            color: white;
-            padding: 1.2rem 0;
-            border-top: var(--border-width) solid var(--border-color);
-            border-bottom: var(--border-width) solid var(--border-color);
-            overflow: hidden;
-            white-space: nowrap;
-            display: flex;
-            transform: rotate(-2deg) scale(1.05);
-            box-shadow: 0 4px 0 0 var(--border-color);
-            position: relative;
-            z-index: 10;
+        .nav-links {
+          margin: 0;
         }
-
-        .marquee-content {
-            font-family: 'Space Mono', monospace;
-            font-weight: 700;
-            font-size: 1.25rem;
-            animation: slide 25s linear infinite;
+        .nav-contact-btn {
+          position: sticky;
+          right: 0;
         }
-
-        @keyframes slide {
-            0% { transform: translateX(0); }
-            100% { transform: translateX(-50%); }
-        }
-
-        /* Skills Grid */
-        .skills-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-            gap: 2rem;
-        }
-
-        .skill-category {
-            background: white;
-            border: var(--border-width) solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-solid-sm);
-            display: flex;
-            flex-direction: column;
-        }
-
-        .skill-header {
-            background: var(--text-color);
-            color: white;
-            padding: 1.2rem 1.5rem;
-            font-weight: 800;
-            font-size: 1.2rem;
-            border-bottom: var(--border-width) solid var(--border-color);
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-
-        .skill-body-list {
-            padding: 2rem 1.5rem;
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-            flex-grow: 1;
-            font-family: 'Space Mono', monospace;
-            font-size: 1rem;
-            font-weight: 700;
-            color: var(--text-color);
-        }
-
-        .skill-item {
-            display: flex;
-            align-items: center;
-            gap: 0.8rem;
-        }
-
-        .skill-item .bullet {
-            color: var(--green-dark);
-            font-weight: 800;
-        }
-        
-        .skill-tag:hover .skill-icon {
-            transform: translateY(-3px);
-        }
-
-        /* CTF & Projects */
-        .bento-grid {
-            display: grid;
-            grid-template-columns: repeat(12, 1fr);
-            gap: 1.5rem;
-        }
-
-        .bento-item {
-            grid-column: span 12;
-        }
-        
-        @media (min-width: 900px) {
-            .bento-item-large { grid-column: span 8; }
-            .bento-item-small { grid-column: span 4; }
-            .bento-item-half { grid-column: span 6; }
-        }
-
-        .project-card {
-            display: flex;
-            flex-direction: column;
-            height: 100%;
-            background: white;
-            border: var(--border-width) solid var(--border-color);
-            border-radius: 12px;
-            box-shadow: var(--shadow-solid);
-            padding: 2.2rem;
-            cursor: pointer;
-            transition: transform 0.2s, box-shadow 0.2s;
-        }
-
-        .project-card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: var(--shadow-solid-hover);
-        }
-
-        .project-top {
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1.2rem;
-        }
-
-        .project-icon {
-            width: 56px;
-            height: 56px;
-            background: var(--green-light);
-            border: 2px solid var(--border-color);
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.8rem;
-            box-shadow: 2px 2px 0px 0px var(--border-color);
-        }
-
-        .project-title {
-            font-size: 1.6rem;
-            font-weight: 800;
-            margin-bottom: 0.6rem;
-        }
-
-        .project-desc {
-            color: #333;
-            margin-bottom: 1.8rem;
-            flex-grow: 1;
-            line-height: 1.6;
-            max-width: 65ch; /* Optimal reading length */
-        }
-
-        .project-tags {
-            display: flex;
-            gap: 0.6rem;
-            flex-wrap: wrap;
-            margin-top: auto;
-        }
-
-        /* Certifications */
         .cert-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
-            gap: 2.5rem;
+          grid-template-columns: 1fr;
         }
-        
-        .cert-card {
-            background: white;
-            border: var(--border-width) solid var(--border-color);
-            border-radius: 12px;
-            overflow: hidden;
-            box-shadow: var(--shadow-solid-sm);
-            transition: transform 0.2s, box-shadow 0.2s;
-            text-decoration: none;
-            color: inherit;
-            display: flex;
-            flex-direction: column;
+        .skills-grid {
+          grid-template-columns: 1fr;
         }
-
-        .cert-card:hover {
-            transform: translate(-4px, -4px);
-            box-shadow: var(--shadow-solid-hover);
-        }
-
-        .cert-image-container {
-            width: 100%;
-            aspect-ratio: 16/11;
-            border-bottom: var(--border-width) solid var(--border-color);
-            background: #e2e8f0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            overflow: hidden;
-        }
-
-        .cert-image-container img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-        }
-
-        .cert-info {
-            padding: 1.5rem;
-            background: white;
-        }
-
-        .cert-info h3 {
-            font-size: 1.25rem;
-            margin-bottom: 0.5rem;
-            line-height: 1.3;
-        }
-
-        .cert-info p {
-            color: #555;
-            font-size: 0.95rem;
-            font-family: 'Space Mono', monospace;
-        }
-
-        /* Footer / Contact */
-        footer {
-            background: var(--text-color);
-            color: #f1f5f9;
-            padding: 5rem 2rem 2rem;
-            border-top: var(--border-width) solid var(--border-color);
-        }
-
         .footer-grid {
-            max-width: 1100px;
-            margin: 0 auto;
-            display: grid;
-            grid-template-columns: 2fr 1fr 1.5fr;
-            gap: 4rem;
-            margin-bottom: 4rem;
+          grid-template-columns: 1fr;
+          gap: 3rem;
         }
+      }
 
-        .footer-logo {
-            display: flex;
-            align-items: center;
-            gap: 1rem;
-            margin-bottom: 1.2rem;
-        }
-        
-        .footer-logo .logo-icon {
-            background: white;
-            color: var(--text-color);
-            width: 44px;
-            height: 44px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 800;
-            font-size: 1.2rem;
-            border: 2px solid var(--text-color); /* Kept neat inside the dark background */
-        }
+      /* Modals */
+      .modal-overlay {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background: rgba(15, 23, 42, 0.4);
+        backdrop-filter: blur(4px);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        z-index: 2000;
+        opacity: 0;
+        pointer-events: none;
+        transition: opacity 0.3s ease;
+      }
 
-        .footer-logo .logo-text {
-            font-size: 1.6rem;
-            font-weight: 800;
-            color: white;
-        }
+      .modal-overlay.active {
+        opacity: 1;
+        pointer-events: auto;
+      }
 
-        .footer-bio {
-            color: #94a3b8;
-            font-size: 1rem;
-            line-height: 1.7;
-            margin-bottom: 2rem;
-            max-width: 380px;
-        }
+      .modal-content {
+        background: white;
+        border: 3px solid var(--border-color);
+        border-radius: 12px;
+        box-shadow: 8px 8px 0px 0px var(--border-color);
+        width: 90%;
+        max-width: 600px;
+        max-height: 90vh;
+        overflow-y: auto;
+        padding: 2.5rem;
+        position: relative;
+        transform: translateY(20px);
+        transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
 
-        .footer-socials {
-            display: flex;
-            gap: 1rem;
-        }
+      .modal-overlay.active .modal-content {
+        transform: translateY(0);
+      }
 
-        .social-btn {
-            background: var(--green);
-            color: white;
-            width: 46px;
-            height: 46px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            border: 2px solid var(--border-color);
-            transition: transform 0.2s, box-shadow 0.2s;
-            box-shadow: 2px 2px 0px 0px var(--border-color);
-        }
-        
-        .social-btn:hover {
-            transform: translate(-2px, -2px);
-            box-shadow: 4px 4px 0px 0px var(--border-color);
-            background: var(--green-light);
-            color: var(--text-color);
-        }
+      .modal-close {
+        position: absolute;
+        top: 1.5rem;
+        right: 1.5rem;
+        background: var(--yellow);
+        border: 3px solid var(--border-color);
+        border-radius: 8px;
+        width: 36px;
+        height: 36px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        font-weight: bold;
+        font-size: 1.2rem;
+        cursor: pointer;
+        box-shadow: 4px 4px 0px 0px var(--border-color);
+        transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
+      }
 
-        .footer-heading {
-            font-size: 1.25rem;
-            color: white;
-            margin-bottom: 1.5rem;
-            font-weight: 700;
-        }
+      .modal-close:hover {
+        transform: translate(-3px, -3px);
+        box-shadow: 7px 7px 0px 0px var(--border-color);
+      }
 
-        .footer-links {
-            list-style: none;
-            display: flex;
-            flex-direction: column;
-            gap: 1.2rem;
-        }
-
-        .footer-links a {
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.2s;
-            font-weight: 600;
-        }
-
-        .footer-links a:hover {
-            color: var(--green-light);
-        }
-
-        .footer-email {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.8rem;
-            color: #94a3b8;
-            text-decoration: none;
-            transition: color 0.2s;
-            font-weight: 600;
-        }
-        
-        .footer-email:hover {
-            color: var(--green-light);
-        }
-
-        .footer-bottom {
-            max-width: 1100px;
-            margin: 0 auto;
-            border-top: 1px solid rgba(255, 255, 255, 0.1);
-            padding-top: 2rem;
-            text-align: center;
-            color: #64748b;
-            font-size: 0.95rem;
-            font-family: 'Space Mono', monospace;
-        }
-
-        .footer-bottom p {
-            max-width: none;
-            margin: 0 auto;
-        }
-
-        /* Responsive Breakpoints */
-        @media (max-width: 900px) {
-            .hero {
-                grid-template-columns: 1fr;
-                padding-top: 8rem;
-                gap: 3rem;
-                text-align: center;
-            }
-            .hero-desc {
-                margin: 0 auto 2.5rem auto;
-                text-align: left;
-            }
-            .hero-actions {
-                justify-content: center;
-            }
-            .hero-subtitle {
-                justify-content: center;
-            }
-            .section-header {
-                flex-direction: column;
-                align-items: flex-start;
-                gap: 0.5rem;
-            }
-        }
-
-        @media (max-width: 768px) {
-            section {
-                padding-top: 5rem;
-                padding-bottom: 3rem;
-            }
-            .navbar {
-                padding: 0.6rem 1rem;
-                justify-content: flex-start;
-                gap: 1rem;
-            }
-            .nav-logo {
-                position: sticky;
-                left: 0;
-            }
-            .nav-links {
-                margin: 0;
-            }
-            .nav-contact-btn {
-                position: sticky;
-                right: 0;
-            }
-            .cert-grid {
-                grid-template-columns: 1fr;
-            }
-            .skills-grid {
-                grid-template-columns: 1fr;
-            }
-            .footer-grid {
-                grid-template-columns: 1fr;
-                gap: 3rem;
-            }
-        }
-
-        /* Modals */
-        .modal-overlay {
-            position: fixed;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background: rgba(15, 23, 42, 0.4);
-            backdrop-filter: blur(4px);
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            z-index: 2000;
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s ease;
-        }
-
-        .modal-overlay.active {
-            opacity: 1;
-            pointer-events: auto;
-        }
-
-        .modal-content {
-            background: white;
-            border: 3px solid var(--border-color);
-            border-radius: 12px;
-            box-shadow: 8px 8px 0px 0px var(--border-color);
-            width: 90%;
-            max-width: 600px;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 2.5rem;
-            position: relative;
-            transform: translateY(20px);
-            transition: transform 0.3s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .modal-overlay.active .modal-content {
-            transform: translateY(0);
-        }
-
-        .modal-close {
-            position: absolute;
-            top: 1.5rem;
-            right: 1.5rem;
-            background: var(--yellow);
-            border: 3px solid var(--border-color);
-            border-radius: 8px;
-            width: 36px;
-            height: 36px;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            font-weight: bold;
-            font-size: 1.2rem;
-            cursor: pointer;
-            box-shadow: 4px 4px 0px 0px var(--border-color);
-            transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1);
-        }
-
-        .modal-close:hover {
-            transform: translate(-3px, -3px);
-            box-shadow: 7px 7px 0px 0px var(--border-color);
-        }
-
-        .modal-close:active {
-            transform: translate(3px, 3px);
-            box-shadow: 0px 0px 0px 0px var(--border-color);
-        }
+      .modal-close:active {
+        transform: translate(3px, 3px);
+        box-shadow: 0px 0px 0px 0px var(--border-color);
+      }
     </style>
-</head>
-<body>
-
+  </head>
+  <body>
     <!-- Navigation -->
     <div class="navbar-wrapper">
-        <nav class="navbar">
-            <a href="#" class="nav-logo">AC</a>
-            <ul class="nav-links">
-                <li><a href="#about">About</a></li>
-                <li><a href="#skills">Skills</a></li>
-                <li><a href="#ctf">Projects</a></li>
-                <li><a href="#certificates">Certificates</a></li>
-            </ul>
-            <a href="#contact" class="btn nav-contact-btn">Contact</a>
-        </nav>
+      <nav class="navbar">
+        <a href="#" class="nav-logo">AC</a>
+        <ul class="nav-links">
+          <li><a href="#about">About</a></li>
+          <li><a href="#skills">Skills</a></li>
+          <li><a href="#ctf">Projects</a></li>
+          <li><a href="#certificates">Certificates</a></li>
+        </ul>
+        <a href="#contact" class="btn nav-contact-btn">Contact</a>
+      </nav>
     </div>
 
     <!-- Hero Section -->
     <section class="container hero" id="about">
-        <div class="hero-content">
-            <div class="mono" style="margin-bottom: 1rem; color: var(--green-dark); font-weight: 700;">root@kali:~# whoami</div>
-            <h1>I'm <span class="highlight-green">Attachat</span><br>Channakorn</h1>
-            <div class="hero-subtitle">
-                <span class="badge">Computer Engineering Student</span>
-                <span class="badge badge-green">CTF Player</span>
-                <span class="badge" style="background: var(--yellow)">SOC Analyst Intern</span>
-            </div>
-            
-            <div class="hero-desc">
-                <p>I am an engineering student at <strong>Kasetsart University</strong> with a strong passion for <strong>Cybersecurity and AI Automation</strong>. Alongside my interest in software development, I actively participate in CTFs (TryHackMe Top 5%) and previously trained as a Blue Team <strong>SOC Analyst Intern</strong> at Cyber Defense.</p>
-                <div style="margin-top: 15px; font-family: 'Space Mono', monospace; font-size: 0.95rem; line-height: 1.5;">
-                    <span style="color:var(--green-dark); font-weight: bold;">></span> Focus: Web Exploitation, AI Automation, Digital Forensics, Dev
-                </div>
-            </div>
-            
-            <div class="hero-actions">
-                <a href="formal_resume.png" download="Attachat_Resume.png" class="btn btn-green">
-                    <svg width="22" height="22" fill="none" stroke="currentColor" stroke-width="2.5" viewBox="0 0 24 24"><path stroke-linecap="round" stroke-linejoin="round" d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"/></svg>
-                    Download Resume
-                </a>
-                <a href="https://github.com/titledontcry" target="_blank" class="btn">
-                    GitHub
-                </a>
-            </div>
+      <div class="hero-content">
+        <div
+          class="mono"
+          style="
+            margin-bottom: 1rem;
+            color: var(--green-dark);
+            font-weight: 700;
+          "
+        >
+          root@kali:~# whoami
         </div>
-        
-        <div class="hero-image-wrapper">
-            <img src="Newprofile.JPG" alt="Attachat Channakorn" class="hero-image" onerror="this.src='https://placehold.co/600x600/10b981/0f172a?text=AC'">
-            <div class="hero-decor-1">Expected Grad: 2027</div>
+        <h1>
+          I'm <span class="highlight-green">Attachat</span><br />Channakorn
+        </h1>
+        <div class="hero-subtitle">
+          <span class="badge">Computer Engineering Student</span>
+          <span class="badge badge-green">CTF Player</span>
+          <span class="badge" style="background: var(--yellow)"
+            >SOC Analyst Intern</span
+          >
         </div>
+
+        <div class="hero-desc">
+          <p>
+            I am an engineering student at
+            <strong>Kasetsart University</strong> with a strong passion for
+            <strong>Cybersecurity and AI Automation</strong>. Alongside my
+            interest in software development, I actively participate in CTFs
+            (TryHackMe Top 5%) and previously trained as a Blue Team
+            <strong>SOC Analyst Intern</strong> at Cyber Defense.
+          </p>
+          <div
+            style="
+              margin-top: 15px;
+              font-family: 'Space Mono', monospace;
+              font-size: 0.95rem;
+              line-height: 1.5;
+            "
+          >
+            <span style="color: var(--green-dark); font-weight: bold">></span>
+            Focus: Web Exploitation, AI Automation, Digital Forensics, Dev
+          </div>
+        </div>
+
+        <div class="hero-actions">
+          <a
+            href="formal_resume.png"
+            download="Attachat_Resume.png"
+            class="btn btn-green"
+          >
+            <svg
+              width="22"
+              height="22"
+              fill="none"
+              stroke="currentColor"
+              stroke-width="2.5"
+              viewBox="0 0 24 24"
+            >
+              <path
+                stroke-linecap="round"
+                stroke-linejoin="round"
+                d="M3 16.5v2.25A2.25 2.25 0 005.25 21h13.5A2.25 2.25 0 0021 18.75V16.5M16.5 12L12 16.5m0 0L7.5 12m4.5 4.5V3"
+              />
+            </svg>
+            Download Resume
+          </a>
+          <a href="https://github.com/titledontcry" target="_blank" class="btn">
+            GitHub
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-image-wrapper">
+        <img
+          src="Newprofile.JPG"
+          alt="Attachat Channakorn"
+          class="hero-image"
+          onerror="
+            this.src = 'https://placehold.co/600x600/10b981/0f172a?text=AC'
+          "
+        />
+        <div class="hero-decor-1">Expected Grad: 2027</div>
+      </div>
     </section>
 
     <!-- Marquee Banner -->
     <div class="marquee">
-        <div class="marquee-content">
-            &nbsp; SOC Analyst &nbsp;&bull;&nbsp; CTF Competitor &nbsp;&bull;&nbsp; Python &nbsp;&bull;&nbsp; Web Exploitation &nbsp;&bull;&nbsp; Digital Forensics &nbsp;&bull;&nbsp; Threat Detection &nbsp;&bull;&nbsp; TryHackMe Top 5% &nbsp;&bull;&nbsp; Kasetsart University &nbsp;&bull;&nbsp; 
-            SOC Analyst &nbsp;&bull;&nbsp; CTF Competitor &nbsp;&bull;&nbsp; Python &nbsp;&bull;&nbsp; Web Exploitation &nbsp;&bull;&nbsp; Digital Forensics &nbsp;&bull;&nbsp; Threat Detection &nbsp;&bull;&nbsp; TryHackMe Top 5% &nbsp;&bull;&nbsp; Kasetsart University &nbsp;&bull;&nbsp;
-        </div>
+      <div class="marquee-content">
+        &nbsp; SOC Analyst &nbsp;&bull;&nbsp; CTF Competitor &nbsp;&bull;&nbsp;
+        Python &nbsp;&bull;&nbsp; Web Exploitation &nbsp;&bull;&nbsp; Digital
+        Forensics &nbsp;&bull;&nbsp; Threat Detection &nbsp;&bull;&nbsp;
+        TryHackMe Top 5% &nbsp;&bull;&nbsp; Kasetsart University
+        &nbsp;&bull;&nbsp; SOC Analyst &nbsp;&bull;&nbsp; CTF Competitor
+        &nbsp;&bull;&nbsp; Python &nbsp;&bull;&nbsp; Web Exploitation
+        &nbsp;&bull;&nbsp; Digital Forensics &nbsp;&bull;&nbsp; Threat Detection
+        &nbsp;&bull;&nbsp; TryHackMe Top 5% &nbsp;&bull;&nbsp; Kasetsart
+        University &nbsp;&bull;&nbsp;
+      </div>
     </div>
 
     <!-- Skills Section -->
     <section id="skills" class="container">
-        <div class="section-header">
-            <div>
-                <div class="mono">root@kali:~# ls -la ./skills</div>
-                <h2>Technical <span class="highlight-yellow">Arsenal</span></h2>
+      <div class="section-header">
+        <div>
+          <div class="mono">root@kali:~# ls -la ./skills</div>
+          <h2>Technical <span class="highlight-yellow">Arsenal</span></h2>
+        </div>
+      </div>
+
+      <div class="skills-grid">
+        <!-- Full-Stack -->
+        <div class="skill-category">
+          <div class="skill-header">
+            <span>Full-Stack</span>
+            <span class="mono">01</span>
+          </div>
+          <div class="skill-body-list">
+            <div class="skill-item">
+              <span class="bullet">></span> Next.js & NestJS
             </div>
+            <div class="skill-item">
+              <span class="bullet">></span> React & TypeScript
+            </div>
+            <div class="skill-item"><span class="bullet">></span> Node.js</div>
+            <div class="skill-item">
+              <span class="bullet">></span> PostgreSQL
+            </div>
+          </div>
         </div>
 
-        <div class="skills-grid">
-            <!-- Full-Stack -->
-            <div class="skill-category">
-                <div class="skill-header">
-                    <span>Full-Stack</span>
-                    <span class="mono">01</span>
-                </div>
-                <div class="skill-body-list">
-                    <div class="skill-item"><span class="bullet">></span> Next.js & NestJS</div>
-                    <div class="skill-item"><span class="bullet">></span> React & TypeScript</div>
-                    <div class="skill-item"><span class="bullet">></span> Node.js</div>
-                    <div class="skill-item"><span class="bullet">></span> PostgreSQL</div>
-                </div>
+        <!-- Deployment & DevOps -->
+        <div class="skill-category">
+          <div
+            class="skill-header"
+            style="background: var(--yellow); color: var(--text-color)"
+          >
+            <span>Deployment</span>
+            <span class="mono">02</span>
+          </div>
+          <div class="skill-body-list">
+            <div class="skill-item"><span class="bullet">></span> Vercel</div>
+            <div class="skill-item">
+              <span class="bullet">></span> Cloudflare
             </div>
-
-            <!-- Deployment & DevOps -->
-            <div class="skill-category">
-                <div class="skill-header" style="background: var(--yellow); color: var(--text-color);">
-                    <span>Deployment</span>
-                    <span class="mono">02</span>
-                </div>
-                <div class="skill-body-list">
-                    <div class="skill-item"><span class="bullet">></span> Vercel</div>
-                    <div class="skill-item"><span class="bullet">></span> Cloudflare</div>
-                    <div class="skill-item"><span class="bullet">></span> Docker</div>
-                    <div class="skill-item"><span class="bullet">></span> Linux / Bash</div>
-                </div>
+            <div class="skill-item"><span class="bullet">></span> Docker</div>
+            <div class="skill-item">
+              <span class="bullet">></span> Linux / Bash
             </div>
-
-            <!-- Blue Team -->
-            <div class="skill-category">
-                <div class="skill-header" style="background: var(--blue);">
-                    <span>Blue Team</span>
-                    <span class="mono">03</span>
-                </div>
-                <div class="skill-body-list">
-                    <div class="skill-item"><span class="bullet">></span> SentinelOne</div>
-                    <div class="skill-item"><span class="bullet">></span> Elastic (SIEM)</div>
-                    <div class="skill-item"><span class="bullet">></span> Wazuh</div>
-                    <div class="skill-item"><span class="bullet">></span> CrowdStrike</div>
-                    <div class="skill-item"><span class="bullet">></span> Wireshark</div>
-                </div>
-            </div>
-
-            <!-- Red Team -->
-            <div class="skill-category">
-                <div class="skill-header" style="background: var(--pink);">
-                    <span>Red Team</span>
-                    <span class="mono">04</span>
-                </div>
-                <div class="skill-body-list">
-                    <div class="skill-item"><span class="bullet">></span> Metasploit</div>
-                    <div class="skill-item"><span class="bullet">></span> Burp Suite</div>
-                    <div class="skill-item"><span class="bullet">></span> Nuclei & Nikto</div>
-                    <div class="skill-item"><span class="bullet">></span> Nmap & Gobuster</div>
-                    <div class="skill-item"><span class="bullet">></span> Ghidra</div>
-                </div>
-            </div>
-
-            <!-- AI & Automation -->
-            <div class="skill-category">
-                <div class="skill-header" style="background: var(--green-dark); color: white;">
-                    <span>AI & Automation</span>
-                    <span class="mono">05</span>
-                </div>
-                <div class="skill-body-list">
-                    <div class="skill-item"><span class="bullet">></span> PyTorch & TensorFlow</div>
-                    <div class="skill-item"><span class="bullet">></span> RAG Pipelines</div>
-                    <div class="skill-item"><span class="bullet">></span> n8n (Automation)</div>
-                    <div class="skill-item"><span class="bullet">></span> Ollama (Local LLM)</div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <!-- Blue Team -->
+        <div class="skill-category">
+          <div class="skill-header" style="background: var(--blue)">
+            <span>Blue Team</span>
+            <span class="mono">03</span>
+          </div>
+          <div class="skill-body-list">
+            <div class="skill-item">
+              <span class="bullet">></span> SentinelOne
+            </div>
+            <div class="skill-item">
+              <span class="bullet">></span> Elastic (SIEM)
+            </div>
+            <div class="skill-item"><span class="bullet">></span> Wazuh</div>
+            <div class="skill-item">
+              <span class="bullet">></span> CrowdStrike
+            </div>
+            <div class="skill-item">
+              <span class="bullet">></span> Wireshark
+            </div>
+          </div>
+        </div>
+
+        <!-- Red Team -->
+        <div class="skill-category">
+          <div class="skill-header" style="background: var(--pink)">
+            <span>Red Team</span>
+            <span class="mono">04</span>
+          </div>
+          <div class="skill-body-list">
+            <div class="skill-item">
+              <span class="bullet">></span> Metasploit
+            </div>
+            <div class="skill-item">
+              <span class="bullet">></span> Burp Suite
+            </div>
+            <div class="skill-item">
+              <span class="bullet">></span> Nuclei & Nikto
+            </div>
+            <div class="skill-item">
+              <span class="bullet">></span> Nmap & Gobuster
+            </div>
+            <div class="skill-item"><span class="bullet">></span> Ghidra</div>
+          </div>
+        </div>
+
+        <!-- AI & Automation -->
+        <div class="skill-category">
+          <div
+            class="skill-header"
+            style="background: var(--green-dark); color: white"
+          >
+            <span>AI & Automation</span>
+            <span class="mono">05</span>
+          </div>
+          <div class="skill-body-list">
+            <div class="skill-item">
+              <span class="bullet">></span> PyTorch & TensorFlow
+            </div>
+            <div class="skill-item">
+              <span class="bullet">></span> RAG Pipelines
+            </div>
+            <div class="skill-item">
+              <span class="bullet">></span> n8n (Automation)
+            </div>
+            <div class="skill-item">
+              <span class="bullet">></span> Ollama (Local LLM)
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- CTF & Projects Section -->
     <section id="ctf" class="container">
-        <div class="section-header">
-            <div>
-                <div class="mono">root@kali:~# ./ctf_and_projects.sh</div>
-                <h2>Experience <span class="highlight-green" style="transform: rotate(2deg);">&amp; Projects</span></h2>
+      <div class="section-header">
+        <div>
+          <div class="mono">root@kali:~# ./ctf_and_projects.sh</div>
+          <h2>
+            Experience
+            <span class="highlight-green" style="transform: rotate(2deg)"
+              >&amp; Projects</span
+            >
+          </h2>
+        </div>
+      </div>
+
+      <div class="bento-grid">
+        <!-- SOC Analyst Intern -->
+        <div class="bento-item bento-item-large">
+          <div class="project-card" style="background: #f8fafc">
+            <div class="project-top">
+              <div
+                class="project-icon"
+                style="background: var(--text-color); color: white"
+              >
+                🛡️
+              </div>
+              <span class="badge badge-green">Experience</span>
             </div>
+            <h3 class="project-title">
+              SOC Analyst Intern
+              <span style="font-size: 1.1rem; color: #64748b; font-weight: 600"
+                >@ Cyber Defense</span
+              >
+            </h3>
+            <p class="project-desc">
+              Worked in the Blue Team to monitor, detect, and respond to
+              security threats. Gained hands-on experience with SIEM tools, log
+              analysis, and incident response procedures.
+            </p>
+            <div class="project-tags">
+              <span class="badge">Blue Team</span>
+              <span class="badge">SIEM</span>
+              <span class="badge">Threat Hunting</span>
+            </div>
+          </div>
         </div>
 
-        <div class="bento-grid">
-            <!-- SOC Analyst Intern -->
-            <div class="bento-item bento-item-large">
-                <div class="project-card" style="background: #f8fafc;">
-                    <div class="project-top">
-                        <div class="project-icon" style="background: var(--text-color); color: white;">
-                            🛡️
-                        </div>
-                        <span class="badge badge-green">Experience</span>
-                    </div>
-                    <h3 class="project-title">SOC Analyst Intern <span style="font-size: 1.1rem; color: #64748b; font-weight: 600;">@ Cyber Defense</span></h3>
-                    <p class="project-desc">Worked in the Blue Team to monitor, detect, and respond to security threats. Gained hands-on experience with SIEM tools, log analysis, and incident response procedures.</p>
-                    <div class="project-tags">
-                        <span class="badge">Blue Team</span>
-                        <span class="badge">SIEM</span>
-                        <span class="badge">Threat Hunting</span>
-                    </div>
-                </div>
+        <!-- TryHackMe Card -->
+        <div class="bento-item bento-item-small">
+          <div class="project-card" style="background: #ffffff">
+            <div class="project-top">
+              <div
+                class="project-icon"
+                style="background: var(--yellow); color: var(--text-color)"
+              >
+                🎯
+              </div>
+              <span class="badge badge-green">Top 5%</span>
             </div>
-
-            <!-- TryHackMe Card -->
-            <div class="bento-item bento-item-small">
-                <div class="project-card" style="background: #ffffff;">
-                    <div class="project-top">
-                        <div class="project-icon" style="background: var(--yellow); color: var(--text-color);">
-                            🎯
-                        </div>
-                        <span class="badge badge-green">Top 5%</span>
-                    </div>
-                    <h3 class="project-title" style="font-size: 1.3rem;">TryHackMe</h3>
-                    <p class="project-desc">Completed 95+ rooms focusing on Web Fundamentals.</p>
-                    <div class="project-tags">
-                        <span class="badge">Web</span>
-                        <a href="https://tryhackme.com/p/tleChuChu" target="_blank" class="badge" style="background:var(--text-color); text-decoration:none; color:white; border-color:var(--border-color);">Profile ↗</a>
-                    </div>
-                </div>
+            <h3 class="project-title" style="font-size: 1.3rem">TryHackMe</h3>
+            <p class="project-desc">
+              Completed 95+ rooms focusing on Web Fundamentals.
+            </p>
+            <div class="project-tags">
+              <span class="badge">Web</span>
+              <a
+                href="https://tryhackme.com/p/tleChuChu"
+                target="_blank"
+                class="badge"
+                style="
+                  background: var(--text-color);
+                  text-decoration: none;
+                  color: white;
+                  border-color: var(--border-color);
+                "
+                >Profile ↗</a
+              >
             </div>
-
-            <!-- Reconis -->
-            <div class="bento-item bento-item-small">
-                <div class="project-card" style="background: #eef2ff;" onclick="openModal('modal-reconis')">
-                    <div class="project-top">
-                        <div class="project-icon" style="background: var(--blue); color: white;">
-                            🔍
-                        </div>
-                    </div>
-                    <h3 class="project-title" style="font-size: 1.3rem;">Reconis</h3>
-                    <p class="project-desc">Automated OSINT & Reconnaissance Tool.</p>
-                    <div class="project-tags">
-                        <span class="badge">OSINT</span>
-                        <span class="badge">Python</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Cyberpark -->
-            <div class="bento-item bento-item-small">
-                <div class="project-card" style="background: #f0fdf4;" onclick="openModal('modal-cyberpark')">
-                    <div class="project-top">
-                        <div class="project-icon" style="background: white;">
-                            🤖
-                        </div>
-                    </div>
-                    <h3 class="project-title" style="font-size: 1.3rem;">Cyberpark</h3>
-                    <p class="project-desc">AI Cyber Platform utilizing RAG for learning.</p>
-                    <div class="project-tags">
-                        <span class="badge">AI/RAG</span>
-                    </div>
-                </div>
-            </div>
-
-            <!-- Clinic ADHD -->
-            <div class="bento-item bento-item-small">
-                <div class="project-card" style="background: #fdf2f8;" onclick="openModal('modal-adhd')">
-                    <div class="project-top">
-                        <div class="project-icon" style="background: white;">
-                            🏥
-                        </div>
-                    </div>
-                    <h3 class="project-title" style="font-size: 1.3rem;">Clinic ADHD</h3>
-                    <p class="project-desc">Full-stack web app for ADHD Clinic management.</p>
-                    <div class="project-tags">
-                        <span class="badge">Web Dev</span>
-                    </div>
-                </div>
-            </div>
+          </div>
         </div>
+
+        <!-- Reconis -->
+        <div class="bento-item bento-item-small">
+          <div
+            class="project-card"
+            style="background: #eef2ff"
+            onclick="openModal('modal-reconis')"
+          >
+            <div class="project-top">
+              <div
+                class="project-icon"
+                style="background: var(--blue); color: white"
+              >
+                🔍
+              </div>
+            </div>
+            <h3 class="project-title" style="font-size: 1.3rem">Reconis</h3>
+            <p class="project-desc">Automated OSINT & Reconnaissance Tool.</p>
+            <div class="project-tags">
+              <span class="badge">OSINT</span>
+              <span class="badge">Python</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Cyberpark -->
+        <div class="bento-item bento-item-small">
+          <div
+            class="project-card"
+            style="background: #f0fdf4"
+            onclick="openModal('modal-cyberpark')"
+          >
+            <div class="project-top">
+              <div class="project-icon" style="background: white">🤖</div>
+            </div>
+            <h3 class="project-title" style="font-size: 1.3rem">Cyberpark</h3>
+            <p class="project-desc">
+              AI Cyber Platform utilizing RAG for learning.
+            </p>
+            <div class="project-tags">
+              <span class="badge">AI/RAG</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- Clinic ADHD -->
+        <div class="bento-item bento-item-small">
+          <div
+            class="project-card"
+            style="background: #fdf2f8"
+            onclick="openModal('modal-adhd')"
+          >
+            <div class="project-top">
+              <div class="project-icon" style="background: white">🏥</div>
+            </div>
+            <h3 class="project-title" style="font-size: 1.3rem">Clinic ADHD</h3>
+            <p class="project-desc">
+              Full-stack web app for ADHD Clinic management.
+            </p>
+            <div class="project-tags">
+              <span class="badge">Web Dev</span>
+            </div>
+          </div>
+        </div>
+      </div>
     </section>
 
     <!-- Certificates -->
     <section id="certificates" class="container">
-        <div class="section-header">
-            <div>
-                <div class="mono">root@kali:~# tree ./certificates</div>
-                <h2>Certified <span class="highlight-yellow" style="transform: rotate(-1deg);">Excellence</span></h2>
-            </div>
+      <div class="section-header">
+        <div>
+          <div class="mono">root@kali:~# tree ./certificates</div>
+          <h2>
+            Certified
+            <span class="highlight-yellow" style="transform: rotate(-1deg)"
+              >Excellence</span
+            >
+          </h2>
         </div>
+      </div>
 
-        <div class="cert-grid">
-            <a href="certificate/24_อรรถชาติ ชาญนคร.jpg" target="_blank" class="cert-card">
-                <div class="cert-image-container" style="background: var(--pink);">
-                    <img src="certificate/24_อรรถชาติ ชาญนคร.jpg" alt="CTF Boot Camp Season 2" onerror="this.style.display='none'">
-                </div>
-                <div class="cert-info">
-                    <h3>CTF Boot Camp Season 2</h3>
-                    <p>NCSA</p>
-                </div>
-            </a>
+      <div class="cert-grid">
+        <a
+          href="certificate/24_อรรถชาติ ชาญนคร.jpg"
+          target="_blank"
+          class="cert-card"
+        >
+          <div class="cert-image-container" style="background: var(--pink)">
+            <img
+              src="certificate/24_อรรถชาติ ชาญนคร.jpg"
+              alt="CTF Boot Camp Season 2"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+          <div class="cert-info">
+            <h3>CTF Boot Camp Season 2</h3>
+            <p>NCSA</p>
+          </div>
+        </a>
 
-            <a href="certificate/EthicalHackerUpdate20260620-32-45mdyk-1.png" target="_blank" class="cert-card">
-                <div class="cert-image-container" style="background: var(--green);">
-                    <img src="certificate/EthicalHackerUpdate20260620-32-45mdyk-1.png" alt="Ethical Hacker" onerror="this.style.display='none'">
-                </div>
-                <div class="cert-info">
-                    <h3>Ethical Hacker</h3>
-                    <p>Cisco Networking Academy</p>
-                </div>
-            </a>
+        <a
+          href="certificate/EthicalHackerUpdate20260620-32-45mdyk-1.png"
+          target="_blank"
+          class="cert-card"
+        >
+          <div class="cert-image-container" style="background: var(--green)">
+            <img
+              src="certificate/EthicalHackerUpdate20260620-32-45mdyk-1.png"
+              alt="Ethical Hacker"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+          <div class="cert-info">
+            <h3>Ethical Hacker</h3>
+            <p>Cisco Networking Academy</p>
+          </div>
+        </a>
 
-            <a href="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg" target="_blank" class="cert-card">
-                <div class="cert-image-container" style="background: var(--blue);">
-                    <img src="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg" alt="Cyber Security 101" onerror="this.style.display='none'">
-                </div>
-                <div class="cert-info">
-                    <h3>Cyber Security 101</h3>
-                    <p>TryHackMe</p>
-                </div>
-            </a>
-            
-            <a href="certificate/04PBH2O9X3TKS_page-0001.jpg" target="_blank" class="cert-card">
-                <div class="cert-image-container" style="background: var(--yellow);">
-                    <img src="certificate/04PBH2O9X3TKS_page-0001.jpg" alt="Basic Cybersecurity" onerror="this.style.display='none'">
-                </div>
-                <div class="cert-info">
-                    <h3>Basic Cybersecurity</h3>
-                    <p>NCSA Mooc Cyber-Learning</p>
-                </div>
-            </a>
-        </div>
+        <a
+          href="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg"
+          target="_blank"
+          class="cert-card"
+        >
+          <div class="cert-image-container" style="background: var(--blue)">
+            <img
+              src="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg"
+              alt="Cyber Security 101"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+          <div class="cert-info">
+            <h3>Cyber Security 101</h3>
+            <p>TryHackMe</p>
+          </div>
+        </a>
+
+        <a
+          href="certificate/04PBH2O9X3TKS_page-0001.jpg"
+          target="_blank"
+          class="cert-card"
+        >
+          <div class="cert-image-container" style="background: var(--yellow)">
+            <img
+              src="certificate/04PBH2O9X3TKS_page-0001.jpg"
+              alt="Basic Cybersecurity"
+              onerror="this.style.display = 'none'"
+            />
+          </div>
+          <div class="cert-info">
+            <h3>Basic Cybersecurity</h3>
+            <p>NCSA Mooc Cyber-Learning</p>
+          </div>
+        </a>
+      </div>
     </section>
 
     <!-- Footer -->
     <footer id="contact">
-        <div class="footer-grid">
-            <!-- Brand Column -->
-            <div class="footer-brand">
-                <div class="footer-logo">
-                    <span class="logo-icon">AC</span>
-                    <span class="logo-text">Attachat</span>
-                </div>
-                <p class="footer-bio">
-                    Computer Engineering student & SOC Analyst Intern. Passionate about Web Exploitation, Digital Forensics, and Threat Detection.
-                </p>
-                <div class="footer-socials">
-                    <a href="https://github.com/titledontcry" target="_blank" class="social-btn" aria-label="GitHub">
-                        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"/></svg>
-                    </a>
-                    <a href="https://tryhackme.com/p/tleChuChu" target="_blank" class="social-btn" aria-label="TryHackMe">
-                        <img src="favicon.png" alt="TryHackMe Logo" style="width: 22px; height: 22px; object-fit: contain; filter: brightness(0) invert(1);">
-                    </a>
-                    <a href="#" target="_blank" class="social-btn" aria-label="LinkedIn">
-                        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/></svg>
-                    </a>
-                    <a href="#" target="_blank" class="social-btn" aria-label="Facebook">
-                        <svg width="22" height="22" fill="currentColor" viewBox="0 0 24 24"><path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/></svg>
-                    </a>
-                </div>
-            </div>
-
-            <!-- Links Column -->
-            <div class="footer-links-col">
-                <h4 class="footer-heading">Pages</h4>
-                <ul class="footer-links">
-                    <li><a href="#about">About</a></li>
-                    <li><a href="#skills">Skills</a></li>
-                    <li><a href="#ctf">Projects</a></li>
-                    <li><a href="#certificates">Certificates</a></li>
-                </ul>
-            </div>
-
-            <!-- Contact Column -->
-            <div class="footer-contact-col">
-                <h4 class="footer-heading">Get in Touch</h4>
-                <div style="display: flex; flex-direction: column; gap: 1.2rem;">
-                    <a href="mailto:title.sitacgm48@gmail.com" class="footer-email">
-                        <span style="font-size: 1.2rem; transform: translateY(1px);">📧</span> title.sitacgm48@gmail.com
-                    </a>
-                    <a href="tel:0612702493" class="footer-email">
-                        <span style="font-size: 1.2rem; transform: translateY(1px);">📞</span> 0612702493
-                    </a>
-                </div>
-            </div>
+      <div class="footer-grid">
+        <!-- Brand Column -->
+        <div class="footer-brand">
+          <div class="footer-logo">
+            <span class="logo-icon">AC</span>
+            <span class="logo-text">Attachat</span>
+          </div>
+          <p class="footer-bio">
+            Computer Engineering student & SOC Analyst Intern. Passionate about
+            Web Exploitation, Digital Forensics, and Threat Detection.
+          </p>
+          <div class="footer-socials">
+            <a
+              href="https://github.com/titledontcry"
+              target="_blank"
+              class="social-btn"
+              aria-label="GitHub"
+            >
+              <svg
+                width="22"
+                height="22"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M12 0C5.37 0 0 5.37 0 12c0 5.3 3.438 9.8 8.205 11.385.6.113.82-.258.82-.577 0-.285-.01-1.04-.015-2.04-3.338.724-4.042-1.61-4.042-1.61-.546-1.385-1.335-1.755-1.335-1.755-1.087-.744.084-.729.084-.729 1.205.084 1.838 1.236 1.838 1.236 1.07 1.835 2.809 1.305 3.495.998.108-.776.417-1.305.76-1.605-2.665-.3-5.466-1.332-5.466-5.93 0-1.31.465-2.38 1.235-3.22-.135-.303-.54-1.523.105-3.176 0 0 1.005-.322 3.3 1.23.96-.267 1.98-.399 3-.405 1.02.006 2.04.138 3 .405 2.28-1.552 3.285-1.23 3.285-1.23.645 1.653.24 2.873.12 3.176.765.84 1.23 1.91 1.23 3.22 0 4.61-2.805 5.625-5.475 5.92.42.36.81 1.096.81 2.22 0 1.606-.015 2.896-.015 3.286 0 .315.21.69.825.57C20.565 21.795 24 17.295 24 12c0-6.63-5.37-12-12-12z"
+                />
+              </svg>
+            </a>
+            <a
+              href="https://tryhackme.com/p/tleChuChu"
+              target="_blank"
+              class="social-btn"
+              aria-label="TryHackMe"
+            >
+              <img
+                src="favicon.png"
+                alt="TryHackMe Logo"
+                style="
+                  width: 22px;
+                  height: 22px;
+                  object-fit: contain;
+                  filter: brightness(0) invert(1);
+                "
+              />
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="social-btn"
+              aria-label="LinkedIn"
+            >
+              <svg
+                width="22"
+                height="22"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"
+                />
+              </svg>
+            </a>
+            <a
+              href="#"
+              target="_blank"
+              class="social-btn"
+              aria-label="Facebook"
+            >
+              <svg
+                width="22"
+                height="22"
+                fill="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path
+                  d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.469h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.469h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"
+                />
+              </svg>
+            </a>
+          </div>
         </div>
 
-        <div class="footer-bottom">
-            <p>© 2026 Attachat Channakorn. Built with Neo Brutalism style.</p>
+        <!-- Links Column -->
+        <div class="footer-links-col">
+          <h4 class="footer-heading">Pages</h4>
+          <ul class="footer-links">
+            <li><a href="#about">About</a></li>
+            <li><a href="#skills">Skills</a></li>
+            <li><a href="#ctf">Projects</a></li>
+            <li><a href="#certificates">Certificates</a></li>
+          </ul>
         </div>
+
+        <!-- Contact Column -->
+        <div class="footer-contact-col">
+          <h4 class="footer-heading">Get in Touch</h4>
+          <div style="display: flex; flex-direction: column; gap: 1.2rem">
+            <a href="mailto:title.sitacgm48@gmail.com" class="footer-email">
+              <span style="font-size: 1.2rem; transform: translateY(1px)"
+                >📧</span
+              >
+              title.sitacgm48@gmail.com
+            </a>
+            <a href="tel:0612702493" class="footer-email">
+              <span style="font-size: 1.2rem; transform: translateY(1px)"
+                >📞</span
+              >
+              0612702493
+            </a>
+          </div>
+        </div>
+      </div>
+
+      <div class="footer-bottom">
+        <p>© 2026 Attachat Channakorn</p>
+      </div>
     </footer>
 
     <!-- Project Modals -->
-    <div id="modal-reconis" class="modal-overlay" onclick="closeModal(event, 'modal-reconis')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal(event, 'modal-reconis')">✕</button>
-            <div class="project-icon" style="background: var(--blue); color: white; margin-bottom: 1rem;">🔍</div>
-            <h2 style="margin-bottom: 1rem;">Reconis</h2>
-            <div class="project-tags" style="margin-bottom: 1.5rem;">
-                <span class="badge">OSINT</span>
-                <span class="badge">Python</span>
-            </div>
-            <p style="margin-bottom: 1rem; color: var(--text-color);"><strong>Reconis</strong> is an Automated OSINT (Open-Source Intelligence) and Reconnaissance Tool. It is designed to gather publicly available information and provide actionable insights for threat detection.</p>
-            <p><em>(More details to be added...)</em></p>
+    <div
+      id="modal-reconis"
+      class="modal-overlay"
+      onclick="closeModal(event, 'modal-reconis')"
+    >
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <button
+          class="modal-close"
+          onclick="closeModal(event, 'modal-reconis')"
+        >
+          ✕
+        </button>
+        <div
+          class="project-icon"
+          style="background: var(--blue); color: white; margin-bottom: 1rem"
+        >
+          🔍
         </div>
+        <h2 style="margin-bottom: 1rem">Reconis</h2>
+        <div class="project-tags" style="margin-bottom: 1.5rem">
+          <span class="badge">OSINT</span>
+          <span class="badge">Python</span>
+        </div>
+        <p style="margin-bottom: 1rem; color: var(--text-color)">
+          <strong>Reconis</strong> is an Automated OSINT (Open-Source
+          Intelligence) and Reconnaissance Tool. It is designed to gather
+          publicly available information and provide actionable insights for
+          threat detection.
+        </p>
+        <p><em>(More details to be added...)</em></p>
+      </div>
     </div>
 
-    <div id="modal-cyberpark" class="modal-overlay" onclick="closeModal(event, 'modal-cyberpark')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal(event, 'modal-cyberpark')">✕</button>
-            <div class="project-icon" style="background: white; border: 3px solid var(--border-color); margin-bottom: 1rem;">🤖</div>
-            <h2 style="margin-bottom: 1rem;">Cyberpark</h2>
-            <div class="project-tags" style="margin-bottom: 1.5rem;">
-                <span class="badge">AI/RAG</span>
-            </div>
-            <p style="margin-bottom: 1rem; color: var(--text-color);"><strong>Cyberpark</strong> is an AI Cyber Platform utilizing RAG (Retrieval-Augmented Generation) for learning. It aims to provide an interactive and intelligent learning environment for cybersecurity concepts.</p>
-            <p><em>(More details to be added...)</em></p>
+    <div
+      id="modal-cyberpark"
+      class="modal-overlay"
+      onclick="closeModal(event, 'modal-cyberpark')"
+    >
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <button
+          class="modal-close"
+          onclick="closeModal(event, 'modal-cyberpark')"
+        >
+          ✕
+        </button>
+        <div
+          class="project-icon"
+          style="
+            background: white;
+            border: 3px solid var(--border-color);
+            margin-bottom: 1rem;
+          "
+        >
+          🤖
         </div>
+        <h2 style="margin-bottom: 1rem">Cyberpark</h2>
+        <div class="project-tags" style="margin-bottom: 1.5rem">
+          <span class="badge">AI/RAG</span>
+        </div>
+        <p style="margin-bottom: 1rem; color: var(--text-color)">
+          <strong>Cyberpark</strong> is an AI Cyber Platform utilizing RAG
+          (Retrieval-Augmented Generation) for learning. It aims to provide an
+          interactive and intelligent learning environment for cybersecurity
+          concepts.
+        </p>
+        <p><em>(More details to be added...)</em></p>
+      </div>
     </div>
 
-    <div id="modal-adhd" class="modal-overlay" onclick="closeModal(event, 'modal-adhd')">
-        <div class="modal-content" onclick="event.stopPropagation()">
-            <button class="modal-close" onclick="closeModal(event, 'modal-adhd')">✕</button>
-            <div class="project-icon" style="background: white; border: 3px solid var(--border-color); margin-bottom: 1rem;">🏥</div>
-            <h2 style="margin-bottom: 1rem;">Clinic ADHD</h2>
-            <div class="project-tags" style="margin-bottom: 1.5rem;">
-                <span class="badge">Web Dev</span>
-            </div>
-            <p style="margin-bottom: 1rem; color: var(--text-color);"><strong>Clinic ADHD</strong> is a full-stack web application designed for ADHD Clinic management. It helps streamline operations, patient tracking, and appointment scheduling.</p>
-            <p><em>(More details to be added...)</em></p>
+    <div
+      id="modal-adhd"
+      class="modal-overlay"
+      onclick="closeModal(event, 'modal-adhd')"
+    >
+      <div class="modal-content" onclick="event.stopPropagation()">
+        <button class="modal-close" onclick="closeModal(event, 'modal-adhd')">
+          ✕
+        </button>
+        <div
+          class="project-icon"
+          style="
+            background: white;
+            border: 3px solid var(--border-color);
+            margin-bottom: 1rem;
+          "
+        >
+          🏥
         </div>
+        <h2 style="margin-bottom: 1rem">Clinic ADHD</h2>
+        <div class="project-tags" style="margin-bottom: 1.5rem">
+          <span class="badge">Web Dev</span>
+        </div>
+        <p style="margin-bottom: 1rem; color: var(--text-color)">
+          <strong>Clinic ADHD</strong> is a full-stack web application designed
+          for ADHD Clinic management. It helps streamline operations, patient
+          tracking, and appointment scheduling.
+        </p>
+        <p><em>(More details to be added...)</em></p>
+      </div>
     </div>
 
     <script>
-        function openModal(id) {
-            document.getElementById(id).classList.add('active');
-            document.body.style.overflow = 'hidden'; 
-        }
+      function openModal(id) {
+        document.getElementById(id).classList.add('active');
+        document.body.style.overflow = 'hidden';
+      }
 
-        function closeModal(event, id) {
-            if (event) event.stopPropagation();
-            document.getElementById(id).classList.remove('active');
-            document.body.style.overflow = 'auto';
-        }
+      function closeModal(event, id) {
+        if (event) event.stopPropagation();
+        document.getElementById(id).classList.remove('active');
+        document.body.style.overflow = 'auto';
+      }
     </script>
-</body>
+  </body>
 </html>

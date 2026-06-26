@@ -131,7 +131,7 @@ Components are bold, tactile, and confident, feeling like physical blocks restin
 - **Border:** Thick 3px border (`#0f172a`).
 
 ### Navigation
-- **Style:** A full-width flush top bar (`top: 0`) with a glassmorphism backdrop (`backdrop-filter: blur(12px)`), anchored with a thick solid bottom border. This ensures it remains accessible without floating intrusively over page content.
+- **Style:** A floating pill (100px radius) positioned absolutely at the top (`top: 1.5rem`) with a glassmorphism backdrop (`backdrop-filter: blur(10px)`). It is anchored with a thick solid border and a small offset shadow, and it scrolls naturally with the page to remain unobtrusive.
 
 ## 6. Do's and Don'ts
 
