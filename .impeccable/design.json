@@ -1,0 +1,64 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-06-26T09:25:31Z",
+  "title": "Design System: Attachat Channakorn Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "green": { "role": "primary", "displayName": "Vibrant Green", "canonical": "#10b981", "tonalRamp": [] },
+      "bg-color": { "role": "neutral", "displayName": "Off-White Background", "canonical": "#f4f6f5", "tonalRamp": [] },
+      "text-color": { "role": "neutral", "displayName": "Heavy Ink", "canonical": "#0f172a", "tonalRamp": [] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "Display", "purpose": "Massive hero text and section headers." },
+      "label": { "displayName": "Label", "purpose": "Section numbering, terminal prompts, and technical metadata." }
+    },
+    "shadows": [
+      { "name": "solid-default", "value": "6px 6px 0px 0px #0f172a", "purpose": "Used for major structural cards and large interactive elements." },
+      { "name": "solid-sm", "value": "4px 4px 0px 0px #0f172a", "purpose": "Used for buttons and smaller interactive surfaces." }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Bold, tactile button for main actions.",
+      "html": "<button class=\"ds-btn ds-btn-green\">GET STARTED</button>",
+      "css": ".ds-btn { display: inline-flex; align-items: center; justify-content: center; font-family: 'Outfit', sans-serif; font-weight: 700; padding: 0.8rem 1.8rem; border: 3px solid #0f172a; border-radius: 8px; box-shadow: 4px 4px 0px 0px #0f172a; transition: all 0.2s cubic-bezier(0.25, 0.8, 0.25, 1); cursor: pointer; color: #0f172a; background-color: white; } .ds-btn-green { background-color: #10b981; color: white; } .ds-btn:hover { transform: translate(-3px, -3px); box-shadow: 8px 8px 0px 0px #0f172a; } .ds-btn:active { transform: translate(3px, 3px); box-shadow: 0px 0px 0px 0px #0f172a; }"
+    },
+    {
+      "name": "Badge",
+      "kind": "chip",
+      "refersTo": "badge",
+      "description": "Pill-shaped tag for metadata and skills.",
+      "html": "<span class=\"ds-badge\">Top 5%</span>",
+      "css": ".ds-badge { background: white; border: 2px solid #0f172a; padding: 0.35rem 0.8rem; border-radius: 20px; font-weight: 700; font-size: 0.85rem; box-shadow: 2px 2px 0px 0px #0f172a; display: inline-flex; align-items: center; gap: 0.4rem; color: #0f172a; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Brutalist Hacker",
+    "overview": "The design system projects a raw, tactile, and highly confident aesthetic. Combining Neo Brutalism fundamentals with a distinct cybersecurity identity, the interface relies on stark contrasts, heavy outlines, and solid drop shadows. It is explicitly designed to command attention and highlight technical expertise without becoming cluttered. The system explicitly rejects overly colorful or animation-heavy sites that are hard to read, as well as generic developer-focused sites that lack intentional design.",
+    "keyCharacteristics": [
+      "High contrast, hard-edged aesthetics",
+      "Thick borders and solid offset shadows",
+      "Purposeful use of vibrant accent colors against a clean, structured background",
+      "Strong typographic hierarchy using highly readable sans-serifs combined with monospace accents"
+    ],
+    "rules": [
+      { "name": "The Structural Ink Rule", "body": "The Heavy Ink color (#0f172a) is never just for text; it is the structural glue of the entire site, forming the thick borders and offset shadows of every tactile element.", "section": "colors" },
+      { "name": "The Technical Monospace Rule", "body": "Monospace fonts are reserved strictly for technical markers (terminal prompts, section numbers, code-like bullets). Never use monospace for long-form reading.", "section": "typography" },
+      { "name": "The Brutalist Depth Rule", "body": "Surfaces are perfectly flat. Depth is only achieved through harsh, solid-color offset shadows with zero blur.", "section": "elevation" }
+    ],
+    "dos": [
+      "Do rely on the 3px border (#0f172a) to outline all distinct interactive and structural components.",
+      "Do use box-shadow strictly with a 0px blur radius to maintain the hard-edged brutalist feel.",
+      "Do maintain high contrast between text and background to ensure readability."
+    ],
+    "donts": [
+      "Don't use soft, blurry, or realistic drop shadows anywhere in the UI.",
+      "Don't use overly colorful or animation-heavy layouts that are hard to read.",
+      "Don't use developer-focused generic components that lack the intentional Brutalist identity.",
+      "Don't use gradient text (background-clip: text). Color is solid and unapologetic."
+    ]
+  }
+}
