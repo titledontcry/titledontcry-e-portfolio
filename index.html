@@ -40,6 +40,7 @@
 
       html {
         scroll-behavior: smooth;
+        overflow-x: hidden;
       }
 
       body {
@@ -424,6 +425,11 @@
       }
 
       /* Marquee */
+      .marquee-wrapper {
+        overflow: hidden;
+        width: 100%;
+      }
+
       .marquee {
         background: var(--green);
         color: white;
@@ -850,13 +856,16 @@
           padding: 1.2rem;
         }
         .hero-actions {
-          flex-direction: column;
-          align-items: center;
+          flex-direction: row;
+          flex-wrap: wrap;
+          align-items: flex-start;
+          justify-content: flex-start;
           gap: 0.8rem;
         }
         .hero-actions .btn {
-          width: 100%;
-          max-width: 280px;
+          flex: 1 1 auto;
+          min-width: 140px;
+          max-width: 220px;
           justify-content: center;
         }
         .hero-image-wrapper {
@@ -1123,6 +1132,7 @@
     </section>
 
     <!-- Marquee Banner -->
+    <div class="marquee-wrapper">
     <div class="marquee">
       <div class="marquee-content">
         &nbsp; SOC Analyst &nbsp;&bull;&nbsp; CTF Competitor &nbsp;&bull;&nbsp;
@@ -1135,6 +1145,7 @@
         &nbsp;&bull;&nbsp; TryHackMe Top 5% &nbsp;&bull;&nbsp; Kasetsart
         University &nbsp;&bull;&nbsp;
       </div>
+    </div>
     </div>
 
     <!-- Skills Section -->
