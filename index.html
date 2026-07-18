@@ -1072,7 +1072,8 @@
         <ul class="nav-links">
           <li><a href="#about">About</a></li>
           <li><a href="#skills">Skills</a></li>
-          <li><a href="#ctf">Projects</a></li>
+          <li><a href="#experience">Experience</a></li>
+          <li><a href="#projects">Projects</a></li>
           <li><a href="#competitive">Compete</a></li>
           <li><a href="#certificates">Certificates</a></li>
         </ul>
@@ -1089,7 +1090,8 @@
     <div class="mobile-menu" id="mobileMenu">
       <a href="#about" class="mobile-nav-link">About</a>
       <a href="#skills" class="mobile-nav-link">Skills</a>
-      <a href="#ctf" class="mobile-nav-link">Projects</a>
+      <a href="#experience" class="mobile-nav-link">Experience</a>
+      <a href="#projects" class="mobile-nav-link">Projects</a>
       <a href="#competitive" class="mobile-nav-link">Compete</a>
       <a href="#certificates" class="mobile-nav-link">Certificates</a>
       <a
@@ -1545,56 +1547,147 @@
       </div>
     </section>
 
-    <!-- CTF & Projects Section -->
-    <section id="ctf" class="container">
+    <!-- Experience Section -->
+    <section id="experience" class="container">
       <div class="section-header">
         <div>
-          <div class="mono">root@kali:~# ./ctf_and_projects.sh</div>
+          <div class="mono">root@kali:~# cat ./experience.log</div>
           <h2>
-            Experience
+            Work
             <span class="highlight-green" style="transform: rotate(2deg)"
-              >&amp; Projects</span
+              >Experience</span
             >
           </h2>
         </div>
       </div>
 
-      <div class="bento-grid">
-        <!-- SOC Analyst Intern -->
-        <div class="bento-item bento-item-large">
-          <div class="project-card" style="background: #f8fafc">
-            <div class="project-top">
-              <div
-                class="project-icon"
-                style="background: var(--text-color); color: white"
-              >
-                <svg
-                  width="26"
-                  height="26"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="currentColor"
-                  stroke-width="2.5"
-                  stroke-linecap="round"
-                  stroke-linejoin="round"
-                >
-                  <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                </svg>
-              </div>
-              <span class="badge badge-green">Experience</span>
+      <!-- Timeline -->
+      <div style="position: relative; max-width: 680px; margin: 0 auto;">
+
+        <!-- Vertical line -->
+        <div style="
+          position: absolute;
+          left: 10px;
+          top: 10px;
+          bottom: 10px;
+          width: 3px;
+          background: linear-gradient(to bottom, var(--green), var(--border-color));
+          border-radius: 2px;
+        "></div>
+
+        <!-- TCC Technology – Upcoming -->
+        <div style="position: relative; padding-left: 36px; margin-bottom: 2.5rem;">
+          <!-- Dot: centered on line (line center = 10+1.5=11.5px, dot left=3, width=16, center=11px) -->
+          <div style="
+            position: absolute;
+            left: 3px;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: var(--green);
+            border: 2.5px solid var(--border-color);
+            border-radius: 50%;
+            z-index: 1;
+          "></div>
+          <div style="
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.6rem 2rem;
+            box-shadow: var(--shadow-solid-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+          " onmouseover="this.style.transform='translate(-3px,-3px)';this.style.boxShadow='var(--shadow-solid-hover)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-solid-sm)'">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.8rem;">
+              <span style="
+                font-family: 'Space Mono', monospace;
+                font-size: 0.78rem;
+                font-weight: 700;
+                color: #64748b;
+              ">Nov 2026 – Mar 2027</span>
+              <span style="
+                background: var(--green);
+                color: white;
+                font-family: 'Space Mono', monospace;
+                font-size: 0.72rem;
+                font-weight: 700;
+                padding: 0.25rem 0.7rem;
+                border-radius: 20px;
+                border: 2px solid var(--border-color);
+                letter-spacing: 0.05em;
+              ">UPCOMING</span>
             </div>
-            <h3 class="project-title">
-              SOC Analyst Intern
-              <span style="font-size: 1.1rem; color: #64748b; font-weight: 600"
-                >@ Cyber Defense</span
-              >
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.25rem;">
+              Security Engineer Intern
             </h3>
-            <p class="project-desc">
-              Worked in the Blue Team to monitor, detect, and respond to
-              security threats. Gained hands-on experience with SIEM tools, log
-              analysis, and incident response procedures.
+            <p style="font-size: 1rem; font-weight: 700; color: var(--green-dark); margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+              <img src="tcc.png" alt="TCC Technology" style="height: 24px; width: auto; object-fit: contain; border-radius: 4px;" onerror="this.style.display='none'" />
+              TCC Technology
             </p>
-            <div class="project-tags">
+            <p style="color: #475569; line-height: 1.65; margin-bottom: 1rem; font-size: 0.95rem;">
+              Co-op internship as a Security Engineer. Will focus on security architecture,
+              infrastructure defense, and threat analysis within an enterprise environment.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
+              <span class="badge">Co-op</span>
+              <span class="badge">Security Engineering</span>
+              <span class="badge">Infrastructure</span>
+            </div>
+          </div>
+        </div>
+
+        <!-- SOC Analyst Intern @ Cyber Defense -->
+        <div style="position: relative; padding-left: 36px; margin-bottom: 2.5rem;">
+          <!-- Dot -->
+          <div style="
+            position: absolute;
+            left: 3px;
+            top: 20px;
+            width: 16px;
+            height: 16px;
+            background: white;
+            border: 2.5px solid var(--border-color);
+            border-radius: 50%;
+            z-index: 1;
+          "></div>
+          <div style="
+            background: white;
+            border: 2px solid var(--border-color);
+            border-radius: 12px;
+            padding: 1.6rem 2rem;
+            box-shadow: var(--shadow-solid-sm);
+            transition: transform 0.2s, box-shadow 0.2s;
+          " onmouseover="this.style.transform='translate(-3px,-3px)';this.style.boxShadow='var(--shadow-solid-hover)'" onmouseout="this.style.transform='';this.style.boxShadow='var(--shadow-solid-sm)'">
+            <div style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 0.6rem; margin-bottom: 0.8rem;">
+              <span style="
+                font-family: 'Space Mono', monospace;
+                font-size: 0.78rem;
+                font-weight: 700;
+                color: #64748b;
+              ">Apr 2026 – Jun 2026</span>
+              <span style="
+                background: #f1f5f9;
+                color: #475569;
+                font-family: 'Space Mono', monospace;
+                font-size: 0.72rem;
+                font-weight: 700;
+                padding: 0.25rem 0.7rem;
+                border-radius: 20px;
+                border: 2px solid var(--border-color);
+                letter-spacing: 0.05em;
+              ">COMPLETED</span>
+            </div>
+            <h3 style="font-size: 1.35rem; font-weight: 800; margin-bottom: 0.25rem;">
+              SOC Analyst Intern
+            </h3>
+            <p style="font-size: 1rem; font-weight: 700; color: #64748b; margin-bottom: 0.9rem; display: flex; align-items: center; gap: 0.5rem;">
+              <img src="CD.png" alt="Cyber Defense" style="height: 24px; width: auto; object-fit: contain; border-radius: 4px;" onerror="this.style.display='none'" />
+              Cyber Defense
+            </p>
+            <p style="color: #475569; line-height: 1.65; margin-bottom: 1rem; font-size: 0.95rem;">
+              Worked in the Blue Team to monitor, detect, and respond to security threats.
+              Gained hands-on experience with SIEM tools, log analysis, and incident response procedures.
+            </p>
+            <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
               <span class="badge">Blue Team</span>
               <span class="badge">SIEM</span>
               <span class="badge">Threat Hunting</span>
@@ -1602,6 +1695,24 @@
           </div>
         </div>
 
+      </div>
+    </section>
+
+    <!-- Projects Section -->
+    <section id="projects" class="container">
+      <div class="section-header">
+        <div>
+          <div class="mono">root@kali:~# ls -la ./projects</div>
+          <h2>
+            Featured
+            <span class="highlight-yellow" style="transform: rotate(-1deg)"
+              >Projects</span
+            >
+          </h2>
+        </div>
+      </div>
+
+      <div class="bento-grid">
         <!-- TryHackMe Card -->
         <div class="bento-item bento-item-small">
           <div class="project-card" style="background: #ffffff">
@@ -1677,7 +1788,7 @@
               </div>
             </div>
             <h3 class="project-title" style="font-size: 1.3rem">Reconis</h3>
-            <p class="project-desc">Automated OSINT & Reconnaissance Tool.</p>
+            <p class="project-desc">Automated OSINT &amp; Reconnaissance Tool.</p>
             <div class="project-tags">
               <span class="badge">OSINT</span>
               <span class="badge">Python</span>
@@ -2088,78 +2199,137 @@
         </div>
       </div>
 
-      <div class="cert-grid">
-        <a
-          href="certificate/24_อรรถชาติ ชาญนคร.jpg"
-          target="_blank"
-          class="cert-card"
-        >
-          <div class="cert-image-container" style="background: var(--pink)">
-            <img
-              src="certificate/24_อรรถชาติ ชาญนคร.jpg"
-              alt="CTF Boot Camp Season 2"
-              onerror="this.style.display = 'none'"
-            />
-          </div>
-          <div class="cert-info">
-            <h3>CTF Boot Camp Season 2</h3>
-            <p>NCSA</p>
-          </div>
-        </a>
+      <!-- Sub-section: Professional Certifications -->
+      <div style="margin-bottom: 3rem;">
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+          <span style="
+            background: var(--text-color);
+            color: white;
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+            letter-spacing: 0.05em;
+          ">🏆 PROFESSIONAL CERTIFICATIONS</span>
+          <div style="flex: 1; height: 2px; background: var(--border-color); opacity: 0.15;"></div>
+        </div>
 
-        <a
-          href="certificate/EthicalHackerUpdate20260620-32-45mdyk-1.png"
-          target="_blank"
-          class="cert-card"
-        >
-          <div class="cert-image-container" style="background: var(--green)">
-            <img
-              src="certificate/EthicalHackerUpdate20260620-32-45mdyk-1.png"
-              alt="Ethical Hacker"
-              onerror="this.style.display = 'none'"
-            />
-          </div>
-          <div class="cert-info">
-            <h3>Ethical Hacker</h3>
-            <p>Cisco Networking Academy</p>
-          </div>
-        </a>
+        <div class="cert-grid">
+          <a
+            href="certificate/isc2-cc.jpg"
+            target="_blank"
+            class="cert-card"
+          >
+            <div class="cert-image-container" style="background: #1a1a2e">
+              <img
+                src="certificate/isc2-cc.jpg"
+                alt="ISC2 Certified in Cybersecurity (CC)"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>Certified in Cybersecurity (CC)</h3>
+              <p>ISC2</p>
+            </div>
+          </a>
 
-        <a
-          href="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg"
-          target="_blank"
-          class="cert-card"
-        >
-          <div class="cert-image-container" style="background: var(--blue)">
-            <img
-              src="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg"
-              alt="Cyber Security 101"
-              onerror="this.style.display = 'none'"
-            />
-          </div>
-          <div class="cert-info">
-            <h3>Cyber Security 101</h3>
-            <p>TryHackMe</p>
-          </div>
-        </a>
 
-        <a
-          href="certificate/04PBH2O9X3TKS_page-0001.jpg"
-          target="_blank"
-          class="cert-card"
-        >
-          <div class="cert-image-container" style="background: var(--yellow)">
-            <img
-              src="certificate/04PBH2O9X3TKS_page-0001.jpg"
-              alt="Basic Cybersecurity"
-              onerror="this.style.display = 'none'"
-            />
-          </div>
-          <div class="cert-info">
-            <h3>Basic Cybersecurity</h3>
-            <p>NCSA Mooc Cyber-Learning</p>
-          </div>
-        </a>
+        </div>
+      </div>
+
+      <!-- Sub-section: Courses & Activities -->
+      <div>
+        <div style="display: flex; align-items: center; gap: 1rem; margin-bottom: 1.5rem;">
+          <span style="
+            background: white;
+            color: var(--text-color);
+            font-family: 'Space Mono', monospace;
+            font-size: 0.8rem;
+            font-weight: 700;
+            padding: 0.35rem 0.9rem;
+            border-radius: 20px;
+            border: 2px solid var(--border-color);
+            letter-spacing: 0.05em;
+            box-shadow: 2px 2px 0px 0px var(--border-color);
+          ">📜 COURSES &amp; ACTIVITIES</span>
+          <div style="flex: 1; height: 2px; background: var(--border-color); opacity: 0.15;"></div>
+        </div>
+
+        <div class="cert-grid">
+          <a
+            href="certificate/EthicalHackerUpdate20260620-32-45mdyk-1.png"
+            target="_blank"
+            class="cert-card"
+          >
+            <div class="cert-image-container" style="background: var(--green)">
+              <img
+                src="certificate/EthicalHackerUpdate20260620-32-45mdyk-1.png"
+                alt="Ethical Hacker"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>Ethical Hacker</h3>
+              <p>Cisco Networking Academy</p>
+            </div>
+          </a>
+
+          <a
+            href="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg"
+            target="_blank"
+            class="cert-card"
+          >
+            <div class="cert-image-container" style="background: var(--blue)">
+              <img
+                src="certificate/1778848273938-f4920fee-12f0-4f0c-9a4c-f343906283ed_1.jpg"
+                alt="Cyber Security 101"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>Cyber Security 101</h3>
+              <p>TryHackMe</p>
+            </div>
+          </a>
+
+          <a
+            href="certificate/04PBH2O9X3TKS_page-0001.jpg"
+            target="_blank"
+            class="cert-card"
+          >
+            <div class="cert-image-container" style="background: var(--yellow)">
+              <img
+                src="certificate/04PBH2O9X3TKS_page-0001.jpg"
+                alt="Basic Cybersecurity"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>Basic Cybersecurity</h3>
+              <p>NCSA Mooc Cyber-Learning</p>
+            </div>
+          </a>
+
+          <a
+            href="certificate/24_อรรถชาติ ชาญนคร.jpg"
+            target="_blank"
+            class="cert-card"
+          >
+            <div class="cert-image-container" style="background: var(--pink)">
+              <img
+                src="certificate/24_อรรถชาติ ชาญนคร.jpg"
+                alt="CTF Boot Camp Season 2"
+                onerror="this.style.display = 'none'"
+              />
+            </div>
+            <div class="cert-info">
+              <h3>CTF Boot Camp Season 2</h3>
+              <p>NCSA</p>
+            </div>
+          </a>
+        </div>
       </div>
     </section>
 
