@@ -861,7 +861,7 @@
           margin: 0 0 2.5rem 0;
         }
         .hero-actions {
-          justify-content: flex-start;
+          justify-content: center;
         }
         .hero-subtitle {
           justify-content: flex-start;
@@ -910,8 +910,8 @@
         .hero-actions {
           flex-direction: row;
           flex-wrap: wrap;
-          align-items: flex-start;
-          justify-content: flex-start;
+          align-items: center;
+          justify-content: center;
           gap: 0.8rem;
         }
         .hero-actions .btn {
@@ -1918,12 +1918,35 @@
       <div class="section-header">
         <div>
           <div class="mono">root@kali:~# cat competitions.log</div>
-          <h2>
-            Competitive
-            <span class="highlight-yellow" style="transform: rotate(-1deg)"
-              >CTF</span
+          <div style="display: flex; align-items: center; gap: 1rem; flex-wrap: wrap;">
+            <h2 style="margin: 0;">
+              Competitive
+              <span class="highlight-yellow" style="transform: rotate(-1deg)"
+                >CTF</span
+              >
+            </h2>
+            <!-- TryHackMe Badge -->
+            <a
+              href="https://tryhackme.com/p/tleChuChu"
+              target="_blank"
+              style="
+                display: inline-block;
+                border: 2.5px solid var(--border-color);
+                border-radius: 10px;
+                overflow: hidden;
+                box-shadow: 3px 3px 0px 0px var(--border-color);
+                transition: transform 0.2s ease, box-shadow 0.2s ease;
+              "
+              onmouseover="this.style.transform='translateY(-3px)'; this.style.boxShadow='5px 5px 0px 0px var(--border-color)'"
+              onmouseout="this.style.transform='translateY(0)'; this.style.boxShadow='3px 3px 0px 0px var(--border-color)'"
             >
-          </h2>
+              <img
+                src="https://tryhackme-badges.s3.amazonaws.com/tleChuChu.png"
+                alt="TryHackMe Badge - tleChuChu"
+                style="display: block; height: 45px; width: auto;"
+              />
+            </a>
+          </div>
         </div>
       </div>
 
@@ -2425,6 +2448,23 @@
               <img
                 src="favicon.png"
                 alt="TryHackMe Logo"
+                style="
+                  width: 22px;
+                  height: 22px;
+                  object-fit: contain;
+                  filter: brightness(0) invert(1);
+                "
+              />
+            </a>
+            <a
+              href="https://profile.hackthebox.com/profile/019d1008-cb35-735e-b5d9-1b8108a86bb4"
+              target="_blank"
+              class="social-btn"
+              aria-label="Hack The Box"
+            >
+              <img
+                src="logo/Hack_The_Box_Logo_1.png"
+                alt="Hack The Box"
                 style="
                   width: 22px;
                   height: 22px;
